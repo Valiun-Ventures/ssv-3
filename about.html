@@ -1,179 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - SSVH | Premium Real Estate Developers</title>
+    <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+        type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #1a365d;
             --secondary: #c9a962;
             --accent: #2d5a4a;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #ffffff;
             color: #1a1a1a;
         }
-        
-        .font-display { font-family: 'Playfair Display', serif; }
-        
-        html { scroll-behavior: smooth; }
-        
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         .nav-scrolled {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
         }
-        
-        .text-gold { color: #c9a962; }
-        .bg-gold { background-color: #c9a962; }
-        
+
+        .text-gold {
+            color: #c9a962;
+        }
+
+        .bg-gold {
+            background-color: #c9a962;
+        }
+
         .btn-primary {
             background: var(--primary);
             color: white;
             transition: all 0.3s ease;
         }
+
         .btn-primary:hover {
             background: #0f2447;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(26, 54, 93, 0.3);
         }
-        
+
         .btn-gold {
             background: var(--secondary);
             color: white;
             transition: all 0.3s ease;
         }
+
         .btn-gold:hover {
             background: #b8973d;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
         }
-        
+
         .btn-outline {
             border: 2px solid var(--primary);
             color: var(--primary);
             transition: all 0.3s ease;
         }
+
         .btn-outline:hover {
             background: var(--primary);
             color: white;
         }
-        
+
         .card-shadow {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
         }
+
         .card-shadow:hover {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
             transform: translateY(-5px);
         }
-        
+
         .section-divider {
             width: 60px;
             height: 3px;
             background: var(--secondary);
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease;
         }
+
         .mobile-menu.active {
             transform: translateX(0);
         }
-        
+
         .page-header {
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 74, 0.8) 100%),
-                        url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop');
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.7) 0%, rgba(45, 90, 74, 0.6) 100%),
+                url('file:///Users/bhushansoni/.gemini/antigravity/brain/470f3d8c-50a7-4089-a148-ff10bbd552da/about_hero_premium_villa_1771433047222.png');
             background-size: cover;
             background-position: center;
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #c9a962; border-radius: 4px; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a962;
+            border-radius: 4px;
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
         <div class="w-full px-6 lg:px-12">
-            <div class="flex items-center justify-between">
+            <div class="relative flex items-center justify-between">
                 <a href="index.html" class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-[#1a365d] rounded-lg flex items-center justify-center">
-                        <span class="text-white font-display font-bold text-xl">S</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
-                        <p class="text-xs text-gray-500 -mt-1">Premium Living</p>
-                    </div>
+                    <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                        alt="SSVH Logo" class="h-12 w-auto object-contain">
                 </a>
-                
-                <div class="hidden lg:flex items-center gap-6">
-                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-[#1a365d] hover:text-[#c9a962] transition-colors">About Us</a>
+
+                <div class="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
+                    <a href="index.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-sm font-medium text-[#1a365d] hover:text-[#c9a962] transition-colors">About Us</a>
                     <div class="relative group">
-                        <button class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors flex items-center gap-1">
+                        <button
+                            class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors flex items-center gap-1">
                             Projects
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                            <a href="projects-ongoing.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Ongoing Projects</a>
-                            <a href="projects-completed.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Completed Projects</a>
-                            <a href="projects-residential.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Residential Plots</a>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                            <a href="projects-ongoing.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Ongoing
+                                Projects</a>
+                            <a href="projects-completed.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Completed
+                                Projects</a>
+                            <a href="projects-residential.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Residential
+                                Plots</a>
                             <hr class="my-2">
-                            <a href="project-maratha.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The Grand Maratha</a>
-                            <a href="project-british.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">British Grand</a>
-                            <a href="project-shyam.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Shyam Vihar</a>
-                            <a href="project-singapore.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore Radhakunj</a>
+                            <a href="project-maratha.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The
+                                Grand Maratha</a>
+                            <a href="project-british.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">British
+                                Grand</a>
+                            <a href="project-shyam.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Shyam
+                                Vihar</a>
+                            <a href="project-singapore.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                Radhakunj</a>
+                            <a href="project-singapore-one.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                One Street</a>
+                            <a href="project-ews.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                NX</a>
+                            <a href="project-iris.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">IRIS
+                                Maa Sarju Vihar</a>
+                            <a href="project-radhakunj-2.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Radha
+                                Kunj Phase II</a>
                         </div>
                     </div>
-                    
-                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Contact</a>
+
+                    <a href="blog.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Blog</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Contact</a>
                 </div>
-                
+
                 <div class="hidden lg:block">
-                    <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+                    <a href="contact.html"
+                        class="btn-gold px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
                         <span>Get Quote</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>
-                
+
                 <button id="mobileToggle" class="lg:hidden p-2">
                     <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
         </div>
     </nav>
-    
+
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-40 lg:hidden">
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
-                <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
+                <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                    alt="SSVH Logo" class="h-10 w-auto object-contain">
                 <button id="closeMobile" class="p-2">
                     <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -181,7 +249,8 @@
                 <a href="index.html" class="text-lg font-medium text-gray-600">Home</a>
                 <a href="about.html" class="text-lg font-medium text-[#1a365d]">About Us</a>
                 <a href="projects-ongoing.html" class="text-lg font-medium text-gray-600">Projects</a>
-                
+
+                <a href="blog.html" class="text-lg font-medium text-gray-600">Blog</a>
                 <a href="contact.html" class="text-lg font-medium text-gray-600">Contact</a>
                 <hr class="my-4">
                 <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Get Quote</a>
@@ -190,50 +259,71 @@
     </div>
 
     <!-- Page Header -->
-    <section class="page-header pt-32 pb-20">
-        <div class="w-full px-6 lg:px-12">
+    <section class="page-header pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="w-full px-6 lg:px-12 relative z-10">
             <div class="max-w-7xl mx-auto text-center">
-                <p class="text-[#c9a962] font-medium tracking-widest uppercase mb-4">About Us</p>
-                <h1 class="font-display text-5xl lg:text-6xl font-bold text-white mb-4">Who We Are</h1>
-                <p class="text-white/80 max-w-2xl mx-auto">Building dreams and delivering trust since 2000</p>
+                <p class="text-[#c9a962] font-medium tracking-widest uppercase mb-4 reveal">Forward-Thinking Real Estate
+                </p>
+                <h1 class="font-display text-5xl lg:text-7xl font-bold text-white mb-6 reveal">About SSV Homes</h1>
+                <p class="text-white/90 max-w-2xl mx-auto text-lg reveal">Built on trust, quality, and long-term value
+                    creation.</p>
             </div>
         </div>
     </section>
 
     <!-- Company Overview -->
-    <section class="py-16">
+    <section class="py-24">
         <div class="w-full px-6 lg:px-12">
             <div class="max-w-7xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="reveal">
-                        <div class="section-divider mb-6"></div>
-                        <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-6">Our Story</h2>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Founded in 2000, SSVH began with a simple yet powerful vision: to create residential 
-                            communities that offer more than just houses—they offer a lifestyle. Over the past 
-                            24 years, we have grown from a small local developer to one of the most trusted names 
-                            in premium real estate.
+                        <div class="section-divider mb-8"></div>
+                        <h2 class="font-display text-4xl lg:text-5xl font-bold text-[#1a365d] mb-8">Professionally
+                            Driven Excellence</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            SSV Homes is a forward-thinking real estate company built on trust, quality, and long-term
+                            value creation. Founded on <strong>15 March 2015</strong>, SSV Homes has established itself
+                            as a professionally driven organization with a strong presence across residential
+                            development, colonisation, investment, and real estate marketing.
                         </p>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Our journey has been marked by a relentless commitment to quality, transparency, 
-                            and customer satisfaction. Every project we undertake is a testament to our 
-                            dedication to excellence and our passion for creating spaces that people are proud 
-                            to call home.
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            With a refined approach to planning and execution, we focus on delivering developments that
+                            meet modern lifestyle expectations while ensuring sustainable growth for our clients and
+                            partners.
                         </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Today, with over 847 completed projects and 2,400+ happy families, SSVH continues 
-                            to set new benchmarks in the real estate industry.
-                        </p>
+                        <div class="flex flex-wrap gap-4 mt-10">
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-100">
+                                <div class="w-2 h-2 bg-[#c9a962] rounded-full"></div>
+                                <span class="text-sm font-semibold text-[#1a365d]">Residential Development</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-100">
+                                <div class="w-2 h-2 bg-[#c9a962] rounded-full"></div>
+                                <span class="text-sm font-semibold text-[#1a365d]">Colonisation</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-100">
+                                <div class="w-2 h-2 bg-[#c9a962] rounded-full"></div>
+                                <span class="text-sm font-semibold text-[#1a365d]">Real Estate Marketing</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reveal grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
-                             alt="Villa" class="rounded-2xl shadow-lg w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" 
-                             alt="Villa" class="rounded-2xl shadow-lg w-full h-48 object-cover mt-8">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" 
-                             alt="Villa" class="rounded-2xl shadow-lg w-full h-48 object-cover -mt-8">
-                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop" 
-                             alt="Villa" class="rounded-2xl shadow-lg w-full h-48 object-cover">
+                    <div class="reveal relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                                alt="Modern Villa"
+                                class="rounded-2xl shadow-2xl w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                                alt="Architectural Detail"
+                                class="rounded-2xl shadow-2xl w-full h-64 object-cover mt-12 transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-[#1a365d] text-white p-8 rounded-2xl shadow-xl hidden md:block">
+                            <p class="text-4xl font-bold font-display">9+</p>
+                            <p class="text-sm opacity-80 uppercase tracking-widest">Years of Trust</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,31 +338,35 @@
                     <div class="reveal bg-white rounded-2xl p-10 card-shadow">
                         <div class="w-16 h-16 bg-[#1a365d]/10 rounded-2xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
                         </div>
                         <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-4">Our Vision</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            To be the most trusted and respected real estate developer in India, known for 
-                            creating sustainable, innovative, and premium living spaces that enhance the 
-                            quality of life for our customers while contributing positively to the communities 
-                            we serve.
+                            Our vision is to be recognized as a trusted and progressive real estate brand that sets
+                            benchmarks in design, execution, and customer experience. We aim to build well-planned
+                            communities that offer comfort, connectivity, and long-term appreciation, while continuously
+                            evolving with market trends and innovation.
                         </p>
                     </div>
-                    
+
                     <div class="reveal bg-white rounded-2xl p-10 card-shadow">
                         <div class="w-16 h-16 bg-[#c9a962]/20 rounded-2xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
                         <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-4">Our Mission</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            To deliver exceptional value to our customers through innovative design, 
-                            superior construction quality, and transparent business practices. We are 
-                            committed to creating homes that exceed expectations and building lasting 
-                            relationships based on trust and integrity.
+                            Our mission is to create premium living spaces and high-potential developments that stand
+                            the test of time. We are committed to delivering excellence through superior construction
+                            standards, transparent processes, and strategic project planning. Alongside development, we
+                            provide end-to-end marketing solutions that enhance project visibility and maximize returns,
+                            ensuring value for homeowners, investors, and stakeholders alike.
                         </p>
                     </div>
                 </div>
@@ -280,31 +374,126 @@
         </div>
     </section>
 
-    <!-- Experience & Track Record -->
-    <section class="py-16">
+    <!-- Founder's Story -->
+    <section class="py-24 overflow-hidden">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal order-2 lg:order-1">
+                        <div class="section-divider mb-8"></div>
+                        <h2 class="font-display text-4xl lg:text-5xl font-bold text-[#1a365d] mb-8">Founder’s Story</h2>
+                        <div class="space-y-6">
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                SSV Homes was founded by <strong>Mr. Piyush Sharma</strong>, a visionary entrepreneur
+                                with deep insight into the real estate ecosystem. Driven by a desire to raise industry
+                                standards, he established SSV Homes to deliver developments that balance design,
+                                functionality, and investment value.
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                His hands-on leadership and customer-centric philosophy have played a key role in
+                                shaping the company’s steady growth and strong market reputation. Under his guidance,
+                                SSV Homes continues to redefine premium living through innovation and integrity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reveal order-1 lg:order-2 relative">
+                        <div
+                            class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square bg-white pt-6">
+                            <img src="https://ik.imagekit.io/q0gorn2pwv/WhatsApp%20Image%202026-02-10%20at%205.19.13%20PM.jpeg"
+                                alt="Mr. Piyush Sharma - Founder of SSV Homes"
+                                class="w-full h-full object-cover object-top rounded-xl">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1a365d]/60 to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <p class="font-display text-2xl font-bold">Mr. Piyush Sharma</p>
+                            <p class="text-white/80 uppercase tracking-widest text-sm">Founder & Visionary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-24 bg-gray-50">
         <div class="w-full px-6 lg:px-12">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 reveal">
-                    <div class="section-divider mx-auto mb-6"></div>
-                    <h2 class="font-display text-4xl font-bold text-[#1a365d]">Our Track Record</h2>
+                    <div class="section-divider mx-auto mb-8"></div>
+                    <h2 class="font-display text-4xl lg:text-5xl font-bold text-[#1a365d]">Our Team</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg mt-6">
+                        Our success is powered by a dedicated team of planners, engineers, marketing professionals, and
+                        sales experts who share a commitment to excellence. Together, we work with precision and
+                        integrity to deliver projects that reflect the core values of SSV Homes.
+                    </p>
                 </div>
-                
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="reveal text-center p-8 bg-[#1a365d] rounded-2xl">
-                        <p class="font-display text-5xl font-bold text-white mb-2">24+</p>
-                        <p class="text-white/70">Years of Excellence</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="reveal bg-white p-8 rounded-2xl card-shadow border-t-4 border-[#1a365d]">
+                        <h4 class="font-display text-xl font-bold text-[#1a365d] mb-2">Planning Excellence</h4>
+                        <p class="text-gray-500 text-sm">Our architects and planners ensure every community is
+                            well-designed for comfort and connectivity.</p>
                     </div>
-                    <div class="reveal text-center p-8 bg-[#c9a962] rounded-2xl">
-                        <p class="font-display text-5xl font-bold text-white mb-2">847</p>
-                        <p class="text-white/70">Projects Completed</p>
+                    <div class="reveal bg-white p-8 rounded-2xl card-shadow border-t-4 border-[#c9a962]">
+                        <h4 class="font-display text-xl font-bold text-[#1a365d] mb-2">Engineering Precision</h4>
+                        <p class="text-gray-500 text-sm">Dedicated engineers committed to superior construction
+                            standards and long-term durability.</p>
                     </div>
-                    <div class="reveal text-center p-8 bg-[#1a365d] rounded-2xl">
-                        <p class="font-display text-5xl font-bold text-white mb-2">2.4K+</p>
-                        <p class="text-white/70">Happy Families</p>
+                    <div class="reveal bg-white p-8 rounded-2xl card-shadow border-t-4 border-[#1a365d]">
+                        <h4 class="font-display text-xl font-bold text-[#1a365d] mb-2">Strategic Marketing</h4>
+                        <p class="text-gray-500 text-sm">Experts providing end-to-end solutions that enhance project
+                            visibility and maximize returns.</p>
                     </div>
-                    <div class="reveal text-center p-8 bg-[#c9a962] rounded-2xl">
-                        <p class="font-display text-5xl font-bold text-white mb-2">15+</p>
-                        <p class="text-white/70">Awards Won</p>
+                    <div class="reveal bg-white p-8 rounded-2xl card-shadow border-t-4 border-[#c9a962]">
+                        <h4 class="font-display text-xl font-bold text-[#1a365d] mb-2">Customer Relations</h4>
+                        <p class="text-gray-500 text-sm">Professional sales and support team building long-term
+                            relationships based on trust.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Track Record -->
+    <section class="py-24">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20 reveal">
+                    <div class="section-divider mx-auto mb-8"></div>
+                    <h2 class="font-display text-4xl lg:text-5xl font-bold text-[#1a365d]">Our Impact in Numbers</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div
+                        class="reveal text-center p-10 bg-[#1a365d] rounded-3xl group hover:bg-[#0f2447] transition-all duration-300">
+                        <p
+                            class="font-display text-5xl lg:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
+                            9+</p>
+                        <p class="text-white/70 uppercase tracking-widest text-xs font-semibold">Years Experience</p>
+                    </div>
+                    <div
+                        class="reveal text-center p-10 bg-[#c9a962] rounded-3xl group hover:bg-[#b8973d] transition-all duration-300">
+                        <p
+                            class="font-display text-5xl lg:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
+                            847</p>
+                        <p class="text-white/70 uppercase tracking-widest text-xs font-semibold">Projects Completed</p>
+                    </div>
+                    <div
+                        class="reveal text-center p-10 bg-[#1a365d] rounded-3xl group hover:bg-[#0f2447] transition-all duration-300">
+                        <p
+                            class="font-display text-5xl lg:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
+                            2.4K+</p>
+                        <p class="text-white/70 uppercase tracking-widest text-xs font-semibold">Happy Families</p>
+                    </div>
+                    <div
+                        class="reveal text-center p-10 bg-[#c9a962] rounded-3xl group hover:bg-[#b8973d] transition-all duration-300">
+                        <p
+                            class="font-display text-5xl lg:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
+                            15+</p>
+                        <p class="text-white/70 uppercase tracking-widest text-xs font-semibold">Awards Won</p>
                     </div>
                 </div>
             </div>
@@ -317,68 +506,82 @@
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 reveal">
                     <div class="section-divider mx-auto mb-6"></div>
-                    <h2 class="font-display text-4xl font-bold text-[#1a365d]">Why Trust SSVH</h2>
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d]">Why Choose SSV Homes</h2>
                 </div>
-                
+
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="reveal bg-white rounded-2xl p-8 card-shadow">
                         <div class="w-14 h-14 bg-[#1a365d]/10 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-7 h-7 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">RERA Compliant</h3>
-                        <p class="text-gray-600">All our projects are fully registered under RERA, ensuring complete transparency and legal protection for buyers.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Integrated Expertise</h3>
+                        <p class="text-gray-600">Builder, developer, coloniser, investor, and marketing partner – all
+                            under one roof.</p>
                     </div>
-                    
+
                     <div class="reveal bg-white rounded-2xl p-8 card-shadow">
                         <div class="w-14 h-14 bg-[#1a365d]/10 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-7 h-7 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">On-Time Delivery</h3>
-                        <p class="text-gray-600">We pride ourselves on delivering projects on schedule, with a track record of zero delayed deliveries.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Quality & Compliance</h3>
+                        <p class="text-gray-600">Strong focus on quality construction and 100% legally compliant
+                            developments.</p>
                     </div>
-                    
+
                     <div class="reveal bg-white rounded-2xl p-8 card-shadow">
                         <div class="w-14 h-14 bg-[#1a365d]/10 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-7 h-7 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                             </svg>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Transparent Pricing</h3>
-                        <p class="text-gray-600">No hidden costs or surprises. We believe in complete transparency in all our dealings and pricing.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Ethical Practices</h3>
+                        <p class="text-gray-600">Transparent communication and ethical business practices in every
+                            transaction.</p>
                     </div>
-                    
+
                     <div class="reveal bg-white rounded-2xl p-8 card-shadow">
                         <div class="w-14 h-14 bg-[#1a365d]/10 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-7 h-7 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Premium Quality</h3>
-                        <p class="text-gray-600">We use only the finest materials and work with the best contractors to ensure lasting quality.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Strategic Locations</h3>
+                        <p class="text-gray-600">Projects situated in high-growth areas with maximum appreciation
+                            potential.</p>
                     </div>
-                    
+
                     <div class="reveal bg-white rounded-2xl p-8 card-shadow">
                         <div class="w-14 h-14 bg-[#1a365d]/10 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-7 h-7 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
                             </svg>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Customer First</h3>
-                        <p class="text-gray-600">Our customers are at the heart of everything we do. We ensure complete satisfaction at every step.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Professional execution</h3>
+                        <p class="text-gray-600">Data-driven marketing and sales execution to ensure project success.
+                        </p>
                     </div>
-                    
+
                     <div class="reveal bg-white rounded-2xl p-8 card-shadow">
                         <div class="w-14 h-14 bg-[#1a365d]/10 rounded-xl flex items-center justify-center mb-6">
                             <svg class="w-7 h-7 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Sustainable Development</h3>
-                        <p class="text-gray-600">We incorporate eco-friendly practices and sustainable design in all our projects.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d] mb-3">Trust-Based Relationships</h3>
+                        <p class="text-gray-600">Building long-term customer relationships through commitment and trust.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -393,34 +596,42 @@
                     <div class="section-divider mx-auto mb-6"></div>
                     <h2 class="font-display text-4xl font-bold text-[#1a365d]">Certifications & Approvals</h2>
                 </div>
-                
+
                 <div class="grid md:grid-cols-4 gap-6">
-                    <div class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
-                        <div class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div
+                        class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
+                        <div
+                            class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="font-display text-2xl font-bold text-[#1a365d]">RERA</span>
                         </div>
                         <h3 class="font-semibold text-[#1a365d] mb-2">RERA Registered</h3>
                         <p class="text-sm text-gray-500">All projects fully compliant</p>
                     </div>
-                    
-                    <div class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
-                        <div class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                    <div
+                        class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
+                        <div
+                            class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="font-display text-xl font-bold text-[#1a365d]">ISO</span>
                         </div>
                         <h3 class="font-semibold text-[#1a365d] mb-2">ISO 9001:2015</h3>
                         <p class="text-sm text-gray-500">Quality Management</p>
                     </div>
-                    
-                    <div class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
-                        <div class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                    <div
+                        class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
+                        <div
+                            class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="font-display text-xl font-bold text-[#1a365d]">CREDAI</span>
                         </div>
                         <h3 class="font-semibold text-[#1a365d] mb-2">CREDAI Member</h3>
                         <p class="text-sm text-gray-500">Real Estate Association</p>
                     </div>
-                    
-                    <div class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
-                        <div class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                    <div
+                        class="reveal text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-[#c9a962] transition-colors">
+                        <div
+                            class="w-20 h-20 bg-[#1a365d]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="font-display text-xl font-bold text-[#1a365d]">IBA</span>
                         </div>
                         <h3 class="font-semibold text-[#1a365d] mb-2">IBA Approved</h3>
@@ -437,10 +648,12 @@
             <div class="max-w-4xl mx-auto text-center reveal">
                 <h2 class="font-display text-4xl font-bold text-white mb-4">Ready to Work With Us?</h2>
                 <p class="text-white/70 mb-8">Let's create something extraordinary together</p>
-                <a href="contact.html" class="btn-gold px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                <a href="contact.html"
+                    class="btn-gold px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
                     <span>Contact Us</span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </a>
             </div>
@@ -454,45 +667,98 @@
                 <div class="grid md:grid-cols-4 gap-12 mb-16">
                     <div>
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                                <span class="text-[#1a365d] font-display font-bold text-xl">S</span>
-                            </div>
-                            <span class="font-display text-2xl font-bold">SSVH</span>
+                            <img src="https://ik.imagekit.io/q0gorn2pwv/GOLD.png" alt="SSVH Logo"
+                                class="h-12 w-auto object-contain">
                         </div>
                         <p class="text-gray-400 mb-6">Building premium residential communities since 2000.</p>
                     </div>
-                    
+
                     <div>
                         <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
                         <ul class="space-y-3">
-                            <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About Us</a></li>
-                            <li><a href="projects-ongoing.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
-                            
-                            <li><a href="blog.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a></li>
-                            <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About
+                                    Us</a></li>
+                            <li><a href="projects-ongoing.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
+
+                            <li><a href="blog.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a></li>
+                            <li><a href="contact.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact</a></li>
                         </ul>
                     </div>
-                    
+
                     <div>
                         <h4 class="font-display text-lg font-bold mb-6">Projects</h4>
                         <ul class="space-y-3">
-                            <li><a href="project-maratha.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a></li>
-                            <li><a href="project-british.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
-                            <li><a href="project-shyam.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
-                            <li><a href="project-singapore.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a></li>
+                            <li><a href="project-maratha.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a>
+                            </li>
+                            <li><a href="project-british.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
+                            <li><a href="project-shyam.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
+                            <li><a href="project-singapore.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a>
+                            </li>
+                            <li><a href="project-singapore-one.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore One
+                                    Street</a>
+                            </li>
+                            <li><a href="project-ews.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a>
+                            </li>
+                            <li><a href="project-iris.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju
+                                    Vihar</a>
+                            </li>
+                            <li><a href="project-radhakunj-2.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Radha Kunj Phase II</a>
+                            </li>
                         </ul>
                     </div>
-                    
+
                     <div>
                         <h4 class="font-display text-lg font-bold mb-6">Contact</h4>
-                        <ul class="space-y-3 text-gray-400">
-                            <li>123 Architecture Lane, Indore</li>
-                            <li>info@ssvh.com</li>
-                            <li>+91 12345 67890</li>
+                        <ul class="space-y-3 text-gray-400 mb-4">
+                            <li>307, Singapore Business Park, LIG Square, Indore, Madhya Pradesh, 452011</li>
+                            <li>shreesiddhivinayakhomes271@gmail.com</li>
+                            <li>8085126788, 8823872527</li>
                         </ul>
+                        <div class="flex gap-3">
+                            <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
+                                target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="https://whatsapp.com/channel/0029VbCjAUUCRs1l1eZBMa0T" target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                            </a>
+                            <a href="https://share.google/nCxAM5tuk0zY20yKl" target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12.48 10.92v3.28h7.84c-.24 1.84-2.21 5.39-7.84 5.39-4.84 0-8.79-4.01-8.79-8.91s3.95-8.91 8.79-8.91c2.75 0 4.6 1.17 5.65 2.18l2.58-2.5c-1.66-1.55-3.82-2.5-8.23-2.5C5.17 1 0 6.17 0 12.5S5.17 24 12.48 24c7.63 0 12.7-5.36 12.7-12.91 0-.87-.1-1.54-.22-2.17h-12.5z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                     <p>© 2024 SSVH. All rights reserved.</p>
                 </div>
@@ -518,9 +784,9 @@
 
         // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
-        
+
         document.querySelectorAll('.reveal').forEach(el => {
-            gsap.fromTo(el, 
+            gsap.fromTo(el,
                 { y: 30, opacity: 0 },
                 {
                     y: 0, opacity: 1, duration: 0.8,
@@ -530,4 +796,5 @@
         });
     </script>
 </body>
+
 </html>

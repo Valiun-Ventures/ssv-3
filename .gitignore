@@ -1,0 +1,8 @@
+# Exclude large video directories and files
+*Videos*
+*Video*
+*.mp4
+*.MOV
+
+# OS metadata
+.DS_Store

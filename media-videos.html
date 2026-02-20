@@ -1,101 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos - SSVH</title>
+    <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+        type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
-        :root { --primary: #1a365d; --secondary: #c9a962; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; }
-        .font-display { font-family: 'Playfair Display', serif; }
-        html { scroll-behavior: smooth; }
-        .nav-scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-        .btn-gold { background: var(--secondary); color: white; transition: all 0.3s ease; }
-        .btn-gold:hover { background: #b8973d; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3); }
-        .section-divider { width: 60px; height: 3px; background: var(--secondary); }
-        .reveal { opacity: 0; transform: translateY(30px); }
-        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
-        .mobile-menu.active { transform: translateX(0); }
-        .page-header { background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 74, 0.8) 100%), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
-        .video-card { cursor: pointer; transition: transform 0.3s ease; }
-        .video-card:hover { transform: translateY(-5px); }
-        .video-card:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); }
-        .play-btn { transition: transform 0.3s ease; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #c9a962; border-radius: 4px; }
+        :root {
+            --primary: #1a365d;
+            --secondary: #c9a962;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-gold {
+            background: var(--secondary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: #b8973d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 74, 0.8) 100%), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .video-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-btn {
+            transition: transform 0.3s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a962;
+            border-radius: 4px;
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
         <div class="w-full px-6 lg:px-12">
-            <div class="flex items-center justify-between">
+            <div class="relative flex items-center justify-between">
                 <a href="index.html" class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-[#1a365d] rounded-lg flex items-center justify-center">
-                        <span class="text-white font-display font-bold text-xl">S</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
-                        <p class="text-xs text-gray-500 -mt-1">Premium Living</p>
-                    </div>
+                    <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                        alt="SSVH Logo" class="h-12 w-auto object-contain">
                 </a>
-                
-                <div class="hidden lg:flex items-center gap-6">
-                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">About Us</a>
+
+                <div class="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
+                    <a href="index.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">About Us</a>
                     <div class="relative group">
-                        <button class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors flex items-center gap-1">Projects<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                            <a href="projects-ongoing.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Ongoing Projects</a>
-                            <a href="projects-completed.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Completed Projects</a>
-                            <a href="projects-residential.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Residential Plots</a>
+                        <button
+                            class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors flex items-center gap-1">Projects<svg
+                                class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                            <a href="projects-ongoing.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Ongoing
+                                Projects</a>
+                            <a href="projects-completed.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Completed
+                                Projects</a>
+                            <a href="projects-residential.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Residential
+                                Plots</a>
                             <hr class="my-2">
-                            <a href="project-maratha.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The Grand Maratha</a>
-                            <a href="project-british.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">British Grand</a>
-                            <a href="project-shyam.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Shyam Vihar</a>
-                            <a href="project-singapore.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore Radhakunj</a>
+                            <a href="project-maratha.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The
+                                Grand Maratha</a>
+                            <a href="project-british.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">British
+                                Grand</a>
+                            <a href="project-shyam.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Shyam
+                                Vihar</a>
+                            <a href="project-singapore.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                Radhakunj</a>
                         </div>
                     </div>
                     <div class="relative group">
-                        <button class="text-sm font-medium text-[#1a365d] hover:text-[#c9a962] transition-colors flex items-center gap-1">Media<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                            <a href="media-gallery.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Gallery</a>
-                            <a href="media-videos.html" class="block px-4 py-2 text-sm text-[#1a365d] hover:bg-gray-50 hover:text-[#c9a962]">Videos</a>
-                            <a href="media-brochures.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Brochures</a>
+                        <button
+                            class="text-sm font-medium text-[#1a365d] hover:text-[#c9a962] transition-colors flex items-center gap-1">Media<svg
+                                class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                            <a href="media-gallery.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Gallery</a>
+                            <a href="media-videos.html"
+                                class="block px-4 py-2 text-sm text-[#1a365d] hover:bg-gray-50 hover:text-[#c9a962]">Videos</a>
+                            <a href="media-brochures.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Brochures</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Contact</a>
+                    <a href="blog.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Blog</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Contact</a>
                 </div>
-                
+
                 <div class="hidden lg:block">
-                    <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"><span>Get Quote</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    <a href="contact.html"
+                        class="btn-gold px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"><span>Get
+                            Quote</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg></a>
                 </div>
-                
+
                 <button id="mobileToggle" class="lg:hidden p-2">
-                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                 </button>
             </div>
         </div>
     </nav>
-    
+
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-40 lg:hidden">
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
-                <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
-                <button id="closeMobile" class="p-2"><svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+                <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                    alt="SSVH Logo" class="h-10 w-auto object-contain">
+                <button id="closeMobile" class="p-2"><svg class="w-6 h-6 text-[#1a365d]" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg></button>
             </div>
             <div class="flex flex-col gap-4">
                 <a href="index.html" class="text-lg font-medium text-gray-600">Home</a>
                 <a href="about.html" class="text-lg font-medium text-gray-600">About Us</a>
                 <a href="projects-ongoing.html" class="text-lg font-medium text-gray-600">Projects</a>
                 <a href="media-videos.html" class="text-lg font-medium text-[#1a365d]">Media</a>
+                <a href="blog.html" class="text-lg font-medium text-gray-600">Blog</a>
                 <a href="contact.html" class="text-lg font-medium text-gray-600">Contact</a>
                 <hr class="my-4">
                 <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Get Quote</a>
@@ -118,10 +246,17 @@
     <section class="py-8 border-b">
         <div class="w-full px-6 lg:px-12">
             <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-4">
-                <button class="filter-btn active px-6 py-2 bg-[#1a365d] text-white rounded-full text-sm font-medium" data-filter="all">All Videos</button>
-                <button class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors" data-filter="walkthrough">Project Walkthroughs</button>
-                <button class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors" data-filter="testimonial">Testimonials</button>
-                <button class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors" data-filter="drone">Drone Footage</button>
+                <button class="filter-btn active px-6 py-2 bg-[#1a365d] text-white rounded-full text-sm font-medium"
+                    data-filter="all">All Videos</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="walkthrough">Project Walkthroughs</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="testimonial">Testimonials</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="drone">Drone Footage</button>
             </div>
         </div>
     </section>
@@ -132,97 +267,142 @@
             <div class="max-w-7xl mx-auto">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Video 1 -->
-                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="walkthrough" onclick="playVideo('The Grand Maratha - Project Walkthrough')">
+                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg"
+                        data-type="walkthrough" onclick="playVideo('The Grand Maratha - Project Walkthrough')">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop" alt="Video 1" class="w-full aspect-video object-cover">
+                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop"
+                                alt="Video 1" class="w-full aspect-video object-cover">
                             <div class="absolute inset-0 bg-black/30"></div>
-                            <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div
+                                class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
                             </div>
-                            <span class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">5:30</span>
+                            <span
+                                class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">5:30</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">The Grand Maratha - Project Walkthrough</h3>
-                            <p class="text-gray-600 text-sm">Complete virtual tour of our flagship project with all amenities.</p>
+                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">The Grand Maratha - Project
+                                Walkthrough</h3>
+                            <p class="text-gray-600 text-sm">Complete virtual tour of our flagship project with all
+                                amenities.</p>
                         </div>
                     </div>
 
                     <!-- Video 2 -->
-                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="testimonial" onclick="playVideo('Customer Testimonial - Rajesh Kumar')">
+                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg"
+                        data-type="testimonial" onclick="playVideo('Customer Testimonial - Rajesh Kumar')">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Video 2" class="w-full aspect-video object-cover">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                                alt="Video 2" class="w-full aspect-video object-cover">
                             <div class="absolute inset-0 bg-black/30"></div>
-                            <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div
+                                class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
                             </div>
-                            <span class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">3:45</span>
+                            <span
+                                class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">3:45</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Customer Testimonial - Rajesh Kumar</h3>
-                            <p class="text-gray-600 text-sm">Hear from our happy customer about their experience with SSVH.</p>
+                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Customer Testimonial - Rajesh
+                                Kumar</h3>
+                            <p class="text-gray-600 text-sm">Hear from our happy customer about their experience with
+                                SSVH.</p>
                         </div>
                     </div>
 
                     <!-- Video 3 -->
-                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="drone" onclick="playVideo('British Grand - Aerial View')">
+                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="drone"
+                        onclick="playVideo('British Grand - Aerial View')">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop" alt="Video 3" class="w-full aspect-video object-cover">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop"
+                                alt="Video 3" class="w-full aspect-video object-cover">
                             <div class="absolute inset-0 bg-black/30"></div>
-                            <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div
+                                class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
                             </div>
-                            <span class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">4:20</span>
+                            <span
+                                class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">4:20</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">British Grand - Aerial View</h3>
-                            <p class="text-gray-600 text-sm">Stunning drone footage showcasing the complete development.</p>
+                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">British Grand - Aerial View
+                            </h3>
+                            <p class="text-gray-600 text-sm">Stunning drone footage showcasing the complete development.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Video 4 -->
-                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="walkthrough" onclick="playVideo('Shyam Vihar - Site Progress')">
+                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg"
+                        data-type="walkthrough" onclick="playVideo('Shyam Vihar - Site Progress')">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=2025&auto=format&fit=crop" alt="Video 4" class="w-full aspect-video object-cover">
+                            <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=2025&auto=format&fit=crop"
+                                alt="Video 4" class="w-full aspect-video object-cover">
                             <div class="absolute inset-0 bg-black/30"></div>
-                            <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div
+                                class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
                             </div>
-                            <span class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">6:15</span>
+                            <span
+                                class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">6:15</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Shyam Vihar - Site Progress</h3>
+                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Shyam Vihar - Site Progress
+                            </h3>
                             <p class="text-gray-600 text-sm">Latest construction update and development progress.</p>
                         </div>
                     </div>
 
                     <!-- Video 5 -->
-                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="testimonial" onclick="playVideo('Customer Testimonial - Priya Sharma')">
+                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg"
+                        data-type="testimonial" onclick="playVideo('Customer Testimonial - Priya Sharma')">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Video 5" class="w-full aspect-video object-cover">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                                alt="Video 5" class="w-full aspect-video object-cover">
                             <div class="absolute inset-0 bg-black/30"></div>
-                            <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div
+                                class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
                             </div>
-                            <span class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">4:00</span>
+                            <span
+                                class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">4:00</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Customer Testimonial - Priya Sharma</h3>
+                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Customer Testimonial - Priya
+                                Sharma</h3>
                             <p class="text-gray-600 text-sm">Discover why British Grand owners love their new home.</p>
                         </div>
                     </div>
 
                     <!-- Video 6 -->
-                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="drone" onclick="playVideo('Singapore Radhakunj - Bird Eye View')">
+                    <div class="reveal video-card bg-white rounded-2xl overflow-hidden shadow-lg" data-type="drone"
+                        onclick="playVideo('Singapore Radhakunj - Bird Eye View')">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Video 6" class="w-full aspect-video object-cover">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
+                                alt="Video 6" class="w-full aspect-video object-cover">
                             <div class="absolute inset-0 bg-black/30"></div>
-                            <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div
+                                class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#c9a962] rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
                             </div>
-                            <span class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">5:45</span>
+                            <span
+                                class="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">5:45</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Singapore Radhakunj - Bird Eye View</h3>
+                            <h3 class="font-display text-xl font-bold text-[#1a365d] mb-2">Singapore Radhakunj - Bird
+                                Eye View</h3>
                             <p class="text-gray-600 text-sm">Aerial perspective of our Singapore-style development.</p>
                         </div>
                     </div>
@@ -238,38 +418,76 @@
                 <div class="grid md:grid-cols-4 gap-10 mb-12">
                     <div>
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                                <span class="text-[#1a365d] font-display font-bold text-xl">S</span>
-                            </div>
-                            <span class="font-display text-2xl font-bold">SSVH</span>
+                            <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                                alt="SSVH Logo" class="h-12 w-auto object-contain">
                         </div>
                         <p class="text-gray-400 mb-6">Building premium residential communities since 2000.</p>
                     </div>
                     <div>
                         <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
                         <ul class="space-y-3">
-                            <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About Us</a></li>
-                            <li><a href="projects-ongoing.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
-                            
-                            <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About
+                                    Us</a></li>
+                            <li><a href="projects-ongoing.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
+
+                            <li><a href="contact.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-display text-lg font-bold mb-6">Projects</h4>
                         <ul class="space-y-3">
-                            <li><a href="project-maratha.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a></li>
-                            <li><a href="project-british.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
-                            <li><a href="project-shyam.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
-                            <li><a href="project-singapore.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a></li>
+                            <li><a href="project-maratha.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a>
+                            </li>
+                            <li><a href="project-british.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
+                            <li><a href="project-shyam.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
+                            <li><a href="project-singapore.html"
+                                    class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-display text-lg font-bold mb-6">Contact</h4>
-                        <ul class="space-y-3 text-gray-400">
-                            <li>123 Architecture Lane, Indore</li>
-                            <li>info@ssvh.com</li>
-                            <li>+91 12345 67890</li>
+                        <ul class="space-y-3 text-gray-400 mb-4">
+                            <li>307, Singapore Business Park, LIG Square, Indore, Madhya Pradesh, 452011</li>
+                            <li>shreesiddhivinayakhomes271@gmail.com</li>
+                            <li>8085126788, 8823872527</li>
                         </ul>
+                        <div class="flex gap-3">
+                            <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
+                                target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="https://whatsapp.com/channel/0029VbCjAUUCRs1l1eZBMa0T" target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                            </a>
+                            <a href="https://share.google/nCxAM5tuk0zY20yKl" target="_blank"
+                                class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#c9a962] transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12.48 10.92v3.28h7.84c-.24 1.84-2.21 5.39-7.84 5.39-4.84 0-8.79-4.01-8.79-8.91s3.95-8.91 8.79-8.91c2.75 0 4.6 1.17 5.65 2.18l2.58-2.5c-1.66-1.55-3.82-2.5-8.23-2.5C5.17 1 0 6.17 0 12.5S5.17 24 12.48 24c7.63 0 12.7-5.36 12.7-12.91 0-.87-.1-1.54-.22-2.17h-12.5z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
@@ -322,9 +540,9 @@
         });
 
         gsap.registerPlugin(ScrollTrigger);
-        
+
         document.querySelectorAll('.reveal').forEach(el => {
-            gsap.fromTo(el, 
+            gsap.fromTo(el,
                 { y: 30, opacity: 0 },
                 {
                     y: 0, opacity: 1, duration: 0.8,
@@ -334,4 +552,5 @@
         });
     </script>
 </body>
+
 </html>
