@@ -29,108 +29,128 @@
             font-family: 'Inter', sans-serif;
             background: #ffffff;
             color: #1a1a1a;
+            overflow-x: hidden;
         }
 
         .font-display {
             font-family: 'Playfair Display', serif;
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* Navbar Styles */
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .nav-scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .text-gold {
-            color: #c9a962;
-        }
-
-        .bg-gold {
-            background-color: #c9a962;
-        }
-
+        /* Buttons */
         .btn-gold {
-            background: var(--secondary);
+            background-color: #c9a962;
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .btn-gold:hover {
-            background: #b8973d;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+            background-color: #b8973d;
         }
 
+        .btn-primary {
+            background-color: #1a365d;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0f2447;
+        }
+
+        /* Animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
         }
 
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IRIS-Maa Sarju Vihar /Images/WhatsApp Image 2026-01-28 at 7.00.06 PM (1).jpeg');
-            background-size: cover;
-            background-position: center;
+        /* Hero Image Overlay */
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        /* Mobile Menu */
+        #mobileMenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobileMenu.active {
+            transform: translateX(0);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .section-divider {
-            width: 60px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
+            width: 80px;
+            height: 4px;
             background: #c9a962;
-            border-radius: 4px;
+            border-radius: 2px;
         }
     </style>
 </head>
 
 <body>
     <!-- Navigation -->
+    <!-- Navbar -->
+    <!-- Navigation -->
     <nav id="navbar"
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm shadow-sm">
         <div class="w-full px-6 lg:px-12">
             <div class="relative flex items-center justify-between">
+                <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-3">
                     <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
                         alt="SSVH Logo" class="h-12 w-auto object-contain">
                 </a>
 
+                <!-- Desktop Menu (Centered) -->
                 <div class="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
                     <a href="index.html"
                         class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
                     <a href="about.html"
-                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">About Us</a>
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">About</a>
                     <div class="relative group">
                         <button
-                            class="text-sm font-medium text-[#1a365d] hover:text-[#c9a962] transition-colors flex items-center gap-1">
+                            class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors flex items-center gap-1">
                             Projects
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div
-                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                            <a href="projects-ongoing.html"
-                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Ongoing
+                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 border border-gray-100">
+                            <a href="projects-residential.html"
+                                class="block px-4 py-2 text-sm text-[#1a365d] font-bold hover:bg-gray-50 hover:text-[#c9a962]">All
                                 Projects</a>
-                            <a href="projects-completed.html"
-                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Completed
-                                Projects</a>
-                            <hr class="my-2">
+                            <hr class="my-2 border-gray-50">
                             <a href="project-maratha.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The
                                 Grand Maratha</a>
@@ -150,8 +170,9 @@
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
                                 NX</a>
                             <a href="project-iris.html"
-                                class="block px-4 py-2 text-sm text-[#1a365d] font-semibold bg-gray-50 border-l-2 border-[#c9a962]">IRIS
-                                Maa Sarju Vihar</a>
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">IRIS
+                                Maa Sarju
+                                Vihar</a>
                             <a href="project-radhakunj-2.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Radha
                                 Kunj Phase II</a>
@@ -159,12 +180,19 @@
                     </div>
                     <a href="blog.html"
                         class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Blog</a>
-                    <a href="contact.html"
-                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Contact</a>
                 </div>
 
-                <button id="mobileToggle" class="lg:hidden p-2">
-                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- CTA Button -->
+                <div class="hidden lg:block relative z-10">
+                    <a href="contact.html"
+                        class="bg-[#1a365d] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#c9a962] transition-all duration-300 shadow-lg shadow-blue-900/10">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileToggle" class="lg:hidden p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -173,48 +201,77 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-40 lg:hidden">
-        <div class="p-6">
-            <div class="flex justify-between items-center mb-8">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-[1000] lg:hidden">
+        <div class="flex flex-col h-full">
+            <div class="px-6 py-4 flex items-center justify-between border-b">
                 <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
-                    alt="SSVH Logo" class="h-10 w-auto object-contain">
-                <button id="closeMobile" class="p-2">
-                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    alt="SSVH Logo" class="h-10 w-auto">
+                <button id="closeMobile" class="p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-            <div class="flex flex-col gap-4">
-                <a href="index.html" class="text-lg font-medium text-gray-600">Home</a>
-                <a href="about.html" class="text-lg font-medium text-gray-600">About Us</a>
-                <a href="projects-ongoing.html" class="text-lg font-medium text-[#1a365d]">Projects</a>
 
-                <a href="blog.html" class="text-lg font-medium text-gray-600">Blog</a>
-                <a href="contact.html" class="text-lg font-medium text-gray-600">Contact</a>
-                <hr class="my-4">
-                <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Get Quote</a>
+            <nav class="flex-1 px-6 py-8 flex flex-col gap-4">
+                <a href="index.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Home</a>
+                <a href="about.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">About</a>
+                <a href="projects-residential.html"
+                    class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
+                <a href="blog.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Blog</a>
+                <a href="contact.html" class="text-2xl font-bold text-[#c9a962]">Contact Us</a>
+            </nav>
+
+            <div class="px-6 py-8 border-t bg-gray-50">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Connect With Us</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
+                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1a365d] shadow-sm">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
+                        target="_blank"
+                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1a365d] shadow-sm">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
+
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center pt-24">
-        <div class="w-full px-6 lg:px-12">
+    <section class="page-header pt-32 pb-20 relative overflow-hidden bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="w-full px-6 lg:px-12 relative z-10">
             <div class="max-w-7xl mx-auto text-center">
-                <span
-                    class="inline-block bg-[#c9a962] text-white px-4 py-1 rounded-full text-sm font-medium mb-6 uppercase tracking-wider">Premium
-                    Residential Township</span>
-                <h1 class="font-display text-5xl lg:text-7xl font-bold text-white mb-6">IRIS Maa Sarju Vihar</h1>
-                <p class="text-white/90 text-xl mb-10 max-w-2xl mx-auto font-light italic">"Lifestyle & Investment
-                    Redefined"</p>
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="contact.html" class="btn-gold px-10 py-4 rounded-full font-semibold">Book Now</a>
+                <p class="text-[#c9a962] font-medium tracking-widest uppercase mb-4 reveal">Elegant Living</p>
+                <h1 class="font-display text-5xl lg:text-7xl font-bold text-white mb-6 reveal">IRIS Maa Sarju Vihar</h1>
+                <p class="text-white/90 max-w-2xl mx-auto text-lg reveal">Elegance in Every Detail. Discover a lifestyle
+                    of sophistication and comfort in our premium residential spaces.</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-8 reveal">
+                    <a href="contact.html"
+                        class="bg-[#c9a962] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#b8973d] transition-all duration-300">
+                        Enquire Now
+                    </a>
+                    <a href="media-brochures.html"
+                        class="border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-[#1a365d] transition-all duration-300">
+                        Download Brochure
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Overview & Video -->
     <section class="py-24">
@@ -289,110 +346,187 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="w-full px-6 lg:px-12">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    <div>
-                        <div class="flex items-center gap-3 mb-8">
-                            <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
-                                alt="SSVH Logo" class="h-12 w-auto object-contain">
-                        </div>
-                        <p class="text-gray-400 font-light leading-relaxed mb-8">
-                            Crafting premium residential spaces since 2000. We build more than structures; we build
-                            communities where legacies are born.
-                        </p>
+    <footer class="bg-[#0a1118] text-white pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Brand & Social -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                            alt="SSVH Logo" class="h-10 w-auto object-contain">
+                        <span class="font-display text-xl font-bold tracking-tight">SSV Homes</span>
                     </div>
-
-                    <div>
-                        <h4 class="font-display text-xl font-bold mb-8 relative inline-block">
-                            Quick Links
-                            <div class="absolute -bottom-2 left-0 w-10 h-0.5 bg-[#c9a962]"></div>
-                        </h4>
-                        <ul class="space-y-4 font-light text-gray-400">
-                            <li><a href="about.html" class="hover:text-[#c9a962] transition-colors">About Story</a></li>
-                            <li><a href="projects-ongoing.html" class="hover:text-[#c9a962] transition-colors">Our
-                                    Portfolio</a></li>
-                            <li><a href="contact.html" class="hover:text-[#c9a962] transition-colors">Get in Touch</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-display text-xl font-bold mb-8 relative inline-block">
-                            Projects
-                            <div class="absolute -bottom-2 left-0 w-10 h-0.5 bg-[#c9a962]"></div>
-                        </h4>
-                        <ul class="space-y-4 font-light text-gray-400">
-                            <li><a href="project-maratha.html" class="hover:text-[#c9a962] transition-colors">The Grand
-                                    Maratha</a></li>
-                            <li><a href="project-british.html" class="hover:text-[#c9a962] transition-colors">British
-                                    Grand</a></li>
-                            <li><a href="project-shyam.html" class="hover:text-[#c9a962] transition-colors">Shyam
-                                    Vihar</a></li>
-                            <li><a href="project-singapore.html"
-                                    class="hover:text-[#c9a962] transition-colors">Singapore
-                                    Radhakunj</a></li>
-                            <li><a href="project-singapore-one.html"
-                                    class="hover:text-[#c9a962] transition-colors">Singapore One Street</a></li>
-                            <li><a href="project-ews.html" class="hover:text-[#c9a962] transition-colors">Singapore
-                                    NX</a></li>
-                            <li><a href="project-iris.html"
-                                    class="hover:text-[#c9a962] transition-colors font-semibold text-white">IRIS Maa
-                                    Sarju Vihar</a></li>
-                            <li><a href="project-radhakunj-2.html" class="hover:text-[#c9a962] transition-colors">Radha
-                                    Kunj Phase II</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-display text-xl font-bold mb-8 relative inline-block">
-                            Contact Info
-                            <div class="absolute -bottom-2 left-0 w-10 h-0.5 bg-[#c9a962]"></div>
-                        </h4>
-                        <ul class="space-y-4 text-gray-400 font-light">
-                            <li class="flex items-start gap-4">
-                                <svg class="w-6 h-6 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                </svg>
-                                <span>307, Singapore Business Park, LIG Square, Indore, Madhya Pradesh, 452011</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <svg class="w-6 h-6 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                <span>shreesiddhivinayakhomes271@gmail.com</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <svg class="w-6 h-6 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                <span>8085126788, 8823872527</span>
-                            </li>
-                        </ul>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                        Your trusted partner in finding the perfect property. We deliver excellence in real estate with
+                        integrity and innovation.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="tel:+918085126788"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
+                            target="_blank"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://share.google/KrFsOeZUGJncUe1wz" target="_blank"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
-                <div class="border-t border-gray-800 pt-10 text-center">
-                    <p class="text-gray-500 font-light italic">© 2024 SSVH. All rights reserved.</p>
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About
+                                Us</a></li>
+                        <li><a href="projects-residential.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Projects -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6">Our Projects</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="project-maratha.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a></li>
+                        <li><a href="project-british.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
+                        <li><a href="project-ews.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a></li>
+                        <li><a href="project-shyam.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
+                        <li><a href="project-singapore.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Us -->
+                <div class="space-y-6">
+                    <h4 class="font-display text-lg font-bold mb-6">Contact Us</h4>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <p class="text-gray-400 text-sm">307, Singapore Business Park, LIG Square, Indore, Madhya
+                            Pradesh, 452011</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <p class="text-gray-400 text-sm">+91 80851 26788, 88238 72527</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <p class="text-gray-400 text-sm break-all">shreesiddhivinayakhomes271@gmail.com</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <h5 class="text-white text-sm font-bold mb-2">Office Hours</h5>
+                        <p class="text-gray-400 text-sm">Monday - Saturday: 11:00 AM - 7:30 PM</p>
+                        <p class="text-gray-400 text-sm">Sunday: Closed (By Appointment)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Strip -->
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 pb-8">
+                <p class="text-gray-500 text-xs shadow-blue-900/10">© 2026 SSV Homes. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-6 text-xs">
+                    <a href="privacy.html" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="text-gray-500 hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="disclaimer.html" class="text-gray-500 hover:text-white transition-colors">Disclaimer</a>
+                    <a href="rera.html" class="text-gray-500 hover:text-white transition-colors">RERA Details</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-        document.querySelectorAll('.reveal').forEach(el => {
-            gsap.fromTo(el, { y: 30, opacity: 0 }, {
-                y: 0, opacity: 1, duration: 0.8,
-                scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const closeMobile = document.getElementById('closeMobile');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
+        }
+
+        if (closeMobile && mobileMenu) {
+            closeMobile.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'bg-white/95', 'shadow-md');
+                navbar.classList.remove('py-4', 'bg-white/90');
+            } else {
+                navbar.classList.add('py-4', 'bg-white/90');
+                navbar.classList.remove('py-2', 'bg-white/95', 'shadow-md');
+            }
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            gsap.fromTo(el,
+                { y: 30, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 0.8,
+                    scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+                }
+            );
         });
     </script>
 </body>

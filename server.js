@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = path.resolve(__dirname);
-const port = Number(process.env.PORT) || 3005;
+const port = Number(process.env.PORT) || 4005;
 const host = process.env.HOST || '127.0.0.1';
 
 const mimeTypes = {
