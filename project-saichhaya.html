@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Chhaya Township - Dewas | SSVH</title>
+    <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+        type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #c9a962;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background-color: #c9a962;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #b8973d;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Hero Image Overlay */
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        /* Mobile Menu */
+        #mobileMenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobileMenu.active {
+            transform: translateX(0);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: #c9a962;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="w-full px-6 lg:px-12">
+            <div class="relative flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                        alt="SSVH Logo" class="h-12 w-auto object-contain">
+                </a>
+
+                <div class="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
+                    <a href="index.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">About</a>
+                    <div class="relative group">
+                        <button
+                            class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors flex items-center gap-1">
+                            Projects
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 border border-gray-100">
+                            <a href="projects-residential.html"
+                                class="block px-4 py-2 text-sm text-[#1a365d] font-bold hover:bg-gray-50 hover:text-[#c9a962]">All
+                                Projects</a>
+                            <hr class="my-2 border-gray-50">
+                            <a href="project-maratha.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The
+                                Grand Maratha</a>
+                            <a href="project-british.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">British
+                                Grand</a>
+                            <a href="project-shyam.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Shyam
+                                Vihar</a>
+                            <a href="project-singapore.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                Radhakunj</a>
+                            <a href="project-singapore-one.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                One Street</a>
+                            <a href="project-ews.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
+                                NX</a>
+                            <a href="project-iris.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">IRIS
+                                Maa Sarju Vihar</a>
+                            <a href="project-saichhaya.html"
+                                class="block px-4 py-2 text-sm text-[#c9a962] font-bold hover:bg-gray-50">Sai Chhaya
+                                Township</a>
+                            <a href="project-radhakunj-2.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Radha
+                                Kunj Phase II</a>
+                        </div>
+                    </div>
+                    <a href="blog.html"
+                        class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Blog</a>
+                </div>
+
+                <div class="hidden lg:block">
+                    <a href="contact.html"
+                        class="btn-gold px-5 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                        <span>Contact Us</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <button id="mobileToggle" class="lg:hidden p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu lg:hidden">
+        <div class="flex flex-col h-full">
+            <div class="px-6 py-4 flex items-center justify-between border-b">
+                <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                    alt="SSVH Logo" class="h-10 w-auto">
+                <button id="closeMobile" class="p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex-1 px-6 py-8 flex flex-col gap-4">
+                <a href="index.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Home</a>
+                <a href="about.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">About</a>
+                <a href="projects-residential.html"
+                    class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
+                <a href="blog.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Blog</a>
+                <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Contact Us</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="page-header pt-32 pb-20 relative overflow-hidden bg-cover bg-center"
+        style="background-image: url('Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.23 AM.jpeg');">
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="w-full px-6 lg:px-12 relative z-10">
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-[#c9a962] font-medium tracking-widest uppercase mb-4 reveal">Premium Plotted Township</p>
+                <h1 class="font-display text-5xl lg:text-7xl font-bold text-white mb-6 reveal">Sai Chhaya Township</h1>
+                <p class="text-white/90 max-w-2xl mx-auto text-lg reveal">Designed for affordable housing and investment
+                    in the growing Dewas region.</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-8 reveal">
+                    <a href="contact.html"
+                        class="bg-[#c9a962] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#b8973d] transition-all duration-300">
+                        Enquire Now
+                    </a>
+                    <a href="media-brochures.html"
+                        class="border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-[#1a365d] transition-all duration-300">
+                        Download Brochure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview & Video -->
+    <section class="py-24">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="reveal">
+                        <div class="section-divider mb-8"></div>
+                        <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-8">Project Overview</h2>
+                        <div class="space-y-6">
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                <strong>Sai Chhaya Township</strong> is a planned residential development located near
+                                the Bhopal–Indore Bypass Road in Dewas. Spanning across <strong>8-10 Acres</strong>, it
+                                offers a secure and peaceful environment perfect for building your dream home.
+                            </p>
+                            <div class="grid grid-cols-2 gap-6 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                                <div>
+                                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Total Area</p>
+                                    <p class="text-xl font-bold text-[#1a365d]">8-10 Acres</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Total Plots</p>
+                                    <p class="text-xl font-bold text-[#1a365d]">120-140 Units</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Starting Price</p>
+                                    <p class="text-xl font-bold text-[#1a365d]">₹17 Lakh*</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">RERA No.</p>
+                                    <p class="text-xl font-bold text-[#c9a962]">P-DWS-24-4810</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal rounded-3xl overflow-hidden shadow-2xl relative bg-black aspect-video">
+                        <video autoplay muted loop controls class="w-full h-full object-cover">
+                            <source src="Sai Chhaya /Videos /Sai Chhaya video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Plot Sizes -->
+                <div class="mb-24 reveal">
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-12 text-center">Plot Sizes & Dimensions
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <h3 class="text-3xl font-bold text-[#c9a962] mb-2">600 <span
+                                    class="text-sm font-normal text-gray-400">sq ft</span></h3>
+                            <p class="text-gray-600 font-medium">20 × 30 ft</p>
+                        </div>
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <h3 class="text-3xl font-bold text-[#c9a962] mb-2">800 <span
+                                    class="text-sm font-normal text-gray-400">sq ft</span></h3>
+                            <p class="text-gray-600 font-medium">20 × 40 ft</p>
+                        </div>
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <h3 class="text-3xl font-bold text-[#c9a962] mb-2">1000 <span
+                                    class="text-sm font-normal text-gray-400">sq ft</span></h3>
+                            <p class="text-gray-600 font-medium">20 × 50 ft</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div class="reveal mb-24">
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-12 text-center">Project Gallery</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.22 AM.jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.23 AM (1).jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.23 AM (2).jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.24 AM (1).jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.24 AM.jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.25 AM (1).jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.25 AM (2).jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.25 AM.jpeg"
+                            class="rounded-2xl w-full aspect-square object-cover shadow-sm hover:scale-[1.02] transition-transform">
+                    </div>
+                </div>
+
+                <!-- Location Advantages -->
+                <div class="reveal">
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-12 text-center">Location Advantages
+                    </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                            <p class="font-bold text-[#1a365d] mb-2">Connectivity</p>
+                            <p class="text-sm text-gray-600">Bhopal-Indore Bypass Road</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                            <p class="font-bold text-[#1a365d] mb-2">Transport</p>
+                            <p class="text-sm text-gray-600">Dewas Railway Station nearby</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                            <p class="font-bold text-[#1a365d] mb-2">Landmarks</p>
+                            <p class="text-sm text-gray-600">Near Shankargarh Hill & Hanuman Mandir</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                            <p class="font-bold text-[#1a365d] mb-2">Economic Hub</p>
+                            <p class="text-sm text-gray-600">Close to Dewas Industrial Area</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a1118] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                            alt="SSVH Logo" class="h-10 w-auto">
+                        <span class="font-display text-xl font-bold">SSV Homes</span>
+                    </div>
+                    <p class="text-gray-400 text-sm italic">Delivering excellence in real estate across the Indore-Dewas
+                        region.</p>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-[#c9a962]">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#c9a962]">About Us</a></li>
+                        <li><a href="projects-residential.html" class="hover:text-[#c9a962]">Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-[#c9a962]">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6">Our Projects</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="project-shyam.html" class="hover:text-[#c9a962]">Shyam Vihar</a></li>
+                        <li><a href="project-singapore.html" class="hover:text-[#c9a962]">Singapore Radhakunj</a></li>
+                        <li><a href="project-saichhaya.html" class="hover:text-[#c9a962]">Sai Chhaya Township</a></li>
+                        <li><a href="project-iris.html" class="hover:text-[#c9a962]">IRIS Maa Sarju Vihar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6">Contact</h4>
+                    <p class="text-sm text-gray-400">307, Singapore Business Park, LIG Square, Indore</p>
+                    <p class="text-sm text-gray-400 font-bold mt-2">+91 80851 26788</p>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-xs text-gray-500">
+                © 2026 SSV Homes. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('nav-scrolled');
+            else navbar.classList.remove('nav-scrolled');
+        });
+
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const closeMobile = document.getElementById('closeMobile');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileToggle?.addEventListener('click', () => mobileMenu?.classList.add('active'));
+        closeMobile?.addEventListener('click', () => mobileMenu?.classList.remove('active'));
+
+        // Animations
+        gsap.registerPlugin(ScrollTrigger);
+        document.querySelectorAll('.reveal').forEach(el => {
+            gsap.fromTo(el, { y: 30, opacity: 0 }, {
+                y: 0, opacity: 1, duration: 1,
+                scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+            });
+        });
+    </script>
+</body>
+
+</html>
