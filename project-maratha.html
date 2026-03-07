@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Grand Maratha - Premium Residential Plots | SSVH</title>
+    <title>The Grand Maratha | SSV Homes</title>
     <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
         type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -121,9 +121,56 @@
 
         .hero-bg {
             background: linear-gradient(135deg, rgba(26, 54, 93, 0.7) 0%, rgba(45, 90, 74, 0.6) 100%),
-                url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop');
+                url('The Grand maratha/Images/4l69ykibl52t3dolr4ho.png');
             background-size: cover;
             background-position: center;
+        }
+
+        .video-container {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .video-container:hover .video-overlay {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: #c9a962;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container:hover .play-button {
+            transform: scale(1.1);
+            background: #b8973d;
+        }
+
+        /* Hide standard controls until play */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        video.playing::-webkit-media-controls {
+            display: flex !important;
         }
 
         .gallery-img {
@@ -186,7 +233,7 @@
                         </button>
                         <div
                             class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 border border-gray-100">
-                            <a href="projects-residential.html"
+                            <a href="all-projects.html"
                                 class="block px-4 py-2 text-sm text-[#1a365d] font-bold hover:bg-gray-50 hover:text-[#c9a962]">All
                                 Projects</a>
                             <hr class="my-2 border-gray-50">
@@ -208,12 +255,12 @@
                             <a href="project-ews.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
                                 NX</a>
-                            <a href="project-saichhaya.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Sai Chhaya Township</a><a href="project-iris.html"
+                            <a href="project-saichhaya.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Sai
+                                Chhaya Township</a><a href="project-iris.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">IRIS
                                 Maa Sarju Vihar</a>
-                            <a href="project-radhakunj-2.html"
-                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Radha
-                                Kunj Phase II</a>
+
                         </div>
                     </div>
                     <a href="blog.html"
@@ -260,8 +307,7 @@
             <nav class="flex-1 px-6 py-8 flex flex-col gap-4">
                 <a href="index.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Home</a>
                 <a href="about.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">About</a>
-                <a href="projects-residential.html"
-                    class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
+                <a href="all-projects.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
                 <a href="blog.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Blog</a>
                 <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Contact Us</a>
             </nav>
@@ -292,7 +338,7 @@
 
     <!-- Hero Section -->
     <section class="page-header pt-32 pb-20 relative overflow-hidden bg-cover bg-center"
-        style="background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop');">
+        style="background-image: url('The Grand maratha/Images/4l69ykibl52t3dolr4ho.png');">
         <div class="absolute inset-0 bg-black/40 z-0"></div>
         <div class="w-full px-6 lg:px-12 relative z-10">
             <div class="max-w-7xl mx-auto text-center">
@@ -304,9 +350,9 @@
                 <div class="flex flex-wrap justify-center gap-4 mt-8 reveal">
                     <a href="contact.html"
                         class="bg-[#c9a962] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#b8973d] transition-all duration-300">
-                        Enquire Now
+                        Contact Us
                     </a>
-                    <a href="media-brochures.html"
+                    <a href="The Grand maratha/Text & PDF/Maratha.pdf" download
                         class="border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-[#1a365d] transition-all duration-300">
                         Download Brochure
                     </a>
@@ -325,37 +371,37 @@
                         <div class="section-divider mb-6"></div>
                         <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-6">Project Overview</h2>
                         <p class="text-gray-600 leading-relaxed mb-6">
-                            The Grand Maratha is SSVH's flagship project, offering premium residential plots
-                            in one of Indore's most sought-after locations. Spread across 25 acres of lush
-                            greenery, this project combines modern amenities with traditional values.
+                            Sarthak Singapore – The Grand Maratha Township is a premium residential plotting project
+                            located at Talawali Chanda, A.B. Road, Indore. Designed as a luxury plotted township, it
+                            features beautifully landscaped gardens, modern clubhouse facilities, and a secured campus
+                            environment.
                         </p>
                         <p class="text-gray-600 leading-relaxed mb-8">
-                            With plot sizes ranging from 1200 to 2400 sq.ft, The Grand Maratha is perfect
-                            for building your dream home. The project features wide internal roads,
-                            landscaped gardens, 24/7 security, and all modern amenities.
+                            With over 6 acres of meticulously planned campus, the project offers a range of residential
+                            plots with well-defined sectors, wide internal roads, and ample green recreational spaces.
                         </p>
                         <div class="grid grid-cols-2 gap-6">
                             <div class="p-4 bg-gray-50 rounded-xl">
-                                <p class="text-2xl font-bold text-[#1a365d]">25</p>
+                                <p class="text-2xl font-bold text-[#1a365d]">6</p>
                                 <p class="text-sm text-gray-500">Acres of Land</p>
                             </div>
                             <div class="p-4 bg-gray-50 rounded-xl">
-                                <p class="text-2xl font-bold text-[#1a365d]">200+</p>
-                                <p class="text-sm text-gray-500">Premium Plots</p>
+                                <p class="text-2xl font-bold text-[#1a365d]">190+</p>
+                                <p class="text-sm text-gray-500">Residential Plots</p>
                             </div>
                             <div class="p-4 bg-gray-50 rounded-xl">
-                                <p class="text-2xl font-bold text-[#1a365d]">40ft</p>
-                                <p class="text-sm text-gray-500">Wide Roads</p>
+                                <p class="text-2xl font-bold text-[#1a365d]">T&CP</p>
+                                <p class="text-sm text-gray-500">Approved Project</p>
                             </div>
                             <div class="p-4 bg-gray-50 rounded-xl">
                                 <p class="text-2xl font-bold text-[#1a365d]">24/7</p>
-                                <p class="text-sm text-gray-500">Security</p>
+                                <p class="text-sm text-gray-500">Secured Campus</p>
                             </div>
                         </div>
                     </div>
                     <div class="reveal">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop"
-                            alt="The Grand Maratha Overview" class="rounded-2xl shadow-2xl w-full">
+                        <img src="The Grand maratha/Images/ws637fbw1c0yiecqiigq.png" alt="The Grand Maratha Overview"
+                            class="rounded-2xl shadow-2xl w-full">
                     </div>
                 </div>
             </div>
@@ -377,11 +423,22 @@
                             class="w-12 h-12 bg-[#c9a962]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-6 h-6 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-[#1a365d]">10 mins</p>
+                        <p class="text-sm text-gray-500">Indore Bypass</p>
+                    </div>
+                    <div class="reveal bg-white p-6 rounded-xl card-shadow text-center">
+                        <div
+                            class="w-12 h-12 bg-[#c9a962]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                         </div>
-                        <p class="font-bold text-[#1a365d]">5 mins</p>
-                        <p class="text-sm text-gray-500">Airport</p>
+                        <p class="font-bold text-[#1a365d]">10 mins</p>
+                        <p class="text-sm text-gray-500">Vijay Nagar</p>
                     </div>
                     <div class="reveal bg-white p-6 rounded-xl card-shadow text-center">
                         <div
@@ -391,19 +448,8 @@
                                     d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
                             </svg>
                         </div>
-                        <p class="font-bold text-[#1a365d]">10 mins</p>
-                        <p class="text-sm text-gray-500">Railway Station</p>
-                    </div>
-                    <div class="reveal bg-white p-6 rounded-xl card-shadow text-center">
-                        <div
-                            class="w-12 h-12 bg-[#c9a962]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-[#1a365d]">3 mins</p>
-                        <p class="text-sm text-gray-500">Shopping Mall</p>
+                        <p class="font-bold text-[#1a365d]">Nearby</p>
+                        <p class="text-sm text-gray-500">Bombay Hospital</p>
                     </div>
                     <div class="reveal bg-white p-6 rounded-xl card-shadow text-center">
                         <div
@@ -413,8 +459,8 @@
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
                         </div>
-                        <p class="font-bold text-[#1a365d]">5 mins</p>
-                        <p class="text-sm text-gray-500">Schools</p>
+                        <p class="font-bold text-[#1a365d]">Easy Access</p>
+                        <p class="text-sm text-gray-500">Metro Station</p>
                     </div>
                 </div>
             </div>
@@ -433,9 +479,9 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="reveal bg-white rounded-2xl overflow-hidden card-shadow border-2 border-gray-100">
                         <div class="p-8 text-center">
-                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Silver</h3>
-                            <p class="text-gray-500 mb-6">1200 sq.ft</p>
-                            <p class="text-3xl font-bold text-[#c9a962] mb-6">₹18 Lakh</p>
+                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Small Plot</h3>
+                            <p class="text-gray-500 mb-6">600 sq.ft</p>
+                            <p class="text-xl font-bold text-[#c9a962] mb-6">Dimensions: 15 × 40 ft</p>
                             <ul class="text-left space-y-3 mb-8">
                                 <li class="flex items-center gap-2 text-sm text-gray-600">
                                     <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
@@ -443,7 +489,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 13l4 4L19 7" />
                                     </svg>
-                                    Corner Plot Available
+                                    Affordable luxury plots
                                 </li>
                                 <li class="flex items-center gap-2 text-sm text-gray-600">
                                     <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
@@ -451,20 +497,12 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 13l4 4L19 7" />
                                     </svg>
-                                    East Facing Options
-                                </li>
-                                <li class="flex items-center gap-2 text-sm text-gray-600">
-                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    Park Facing Available
+                                    T&CP Approved planning
                                 </li>
                             </ul>
                             <a href="contact.html"
-                                class="btn-primary w-full py-3 rounded-xl font-semibold text-center inline-block">Enquire
-                                Now</a>
+                                class="btn-primary w-full py-3 rounded-xl font-semibold text-center inline-block">Contact
+                                Us</a>
                         </div>
                     </div>
 
@@ -473,9 +511,9 @@
                         <div class="absolute top-0 right-0 bg-[#c9a962] text-white px-4 py-1 text-sm font-medium">
                             Popular</div>
                         <div class="p-8 text-center">
-                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Gold</h3>
-                            <p class="text-gray-500 mb-6">1800 sq.ft</p>
-                            <p class="text-3xl font-bold text-[#c9a962] mb-6">₹27 Lakh</p>
+                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Medium Plot</h3>
+                            <p class="text-gray-500 mb-6">680 sq.ft</p>
+                            <p class="text-xl font-bold text-[#c9a962] mb-6">Dimensions: 17 × 40 ft</p>
                             <ul class="text-left space-y-3 mb-8">
                                 <li class="flex items-center gap-2 text-sm text-gray-600">
                                     <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
@@ -483,7 +521,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 13l4 4L19 7" />
                                     </svg>
-                                    Premium Location
+                                    Spacious 3BHK layout scope
                                 </li>
                                 <li class="flex items-center gap-2 text-sm text-gray-600">
                                     <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
@@ -491,28 +529,20 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 13l4 4L19 7" />
                                     </svg>
-                                    Main Road Facing
-                                </li>
-                                <li class="flex items-center gap-2 text-sm text-gray-600">
-                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    All Amenities Access
+                                    Located near internal parks
                                 </li>
                             </ul>
                             <a href="contact.html"
-                                class="btn-gold w-full py-3 rounded-xl font-semibold text-center inline-block">Enquire
-                                Now</a>
+                                class="btn-gold w-full py-3 rounded-xl font-semibold text-center inline-block">Contact
+                                Us</a>
                         </div>
                     </div>
 
                     <div class="reveal bg-white rounded-2xl overflow-hidden card-shadow border-2 border-gray-100">
                         <div class="p-8 text-center">
-                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Platinum</h3>
-                            <p class="text-gray-500 mb-6">2400 sq.ft</p>
-                            <p class="text-3xl font-bold text-[#c9a962] mb-6">₹36 Lakh</p>
+                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Premium Plot</h3>
+                            <p class="text-gray-500 mb-6">1200 sq.ft</p>
+                            <p class="text-xl font-bold text-[#c9a962] mb-6">Dimensions: 20 × 60 ft</p>
                             <ul class="text-left space-y-3 mb-8">
                                 <li class="flex items-center gap-2 text-sm text-gray-600">
                                     <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
@@ -520,7 +550,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 13l4 4L19 7" />
                                     </svg>
-                                    Exclusive Corner Plots
+                                    Bungalow & Villa plots
                                 </li>
                                 <li class="flex items-center gap-2 text-sm text-gray-600">
                                     <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
@@ -528,19 +558,12 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 13l4 4L19 7" />
                                     </svg>
-                                    Grand Villa Suitable
-                                </li>
-                                <li class="flex items-center gap-2 text-sm text-gray-600">
-                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    VIP Location
+                                    Major road facing options
                                 </li>
                             </ul>
                             <a href="contact.html"
-                                class="btn-primary w-full py-3 rounded-xl font-semibold text-center inline-block">Enquire
+                                class="btn-primary w-full py-3 rounded-xl font-semibold text-center inline-block">Contact
+                                Us
                                 Now</a>
                         </div>
                     </div>
@@ -563,31 +586,11 @@
                         <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-white font-semibold mb-2">24/7 Power Backup</h3>
-                        <p class="text-white/60 text-sm">Uninterrupted electricity supply</p>
-                    </div>
-                    <div class="reveal text-center">
-                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-                            </svg>
-                        </div>
-                        <h3 class="text-white font-semibold mb-2">Street Lighting</h3>
-                        <p class="text-white/60 text-sm">Solar-powered LED lights</p>
-                    </div>
-                    <div class="reveal text-center">
-                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7" />
-                            </svg>
-                        </div>
-                        <h3 class="text-white font-semibold mb-2">Gated Community</h3>
-                        <p class="text-white/60 text-sm">Controlled entry and exit</p>
+                        <h3 class="text-white font-semibold mb-2">24x7 Security</h3>
+                        <p class="text-white/60 text-sm">Secured campus with entry gate</p>
                     </div>
                     <div class="reveal text-center">
                         <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -596,8 +599,28 @@
                                     d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-white font-semibold mb-2">Landscaped Gardens</h3>
-                        <p class="text-white/60 text-sm">Beautiful green spaces</p>
+                        <h3 class="text-white font-semibold mb-2">6+ Theme Gardens</h3>
+                        <p class="text-white/60 text-sm">Uniquely styled community gardens</p>
+                    </div>
+                    <div class="reveal text-center">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Grand Clubhouse</h3>
+                        <p class="text-white/60 text-sm">Gym, swimming pool & more</p>
+                    </div>
+                    <div class="reveal text-center">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Wide Roads</h3>
+                        <p class="text-white/60 text-sm">9m - 30m wide internal roads</p>
                     </div>
                     <div class="reveal text-center">
                         <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -653,30 +676,273 @@
                     <h2 class="font-display text-4xl font-bold text-[#1a365d]">Project Gallery</h2>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-4">
+                <div class="grid md:grid-cols-4 gap-4">
                     <div class="reveal gallery-img overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
-                            alt="Gallery 1" class="w-full aspect-square object-cover">
+                        <img src="The Grand maratha/Images/47tjjltk2m3wyv98azir.png" alt="Gallery 1"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-img overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
-                            alt="Gallery 2" class="w-full aspect-square object-cover">
+                        <img src="The Grand maratha/Images/ws637fbw1c0yiecqiigq.png" alt="Gallery 2"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-img overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
-                            alt="Gallery 3" class="w-full aspect-square object-cover">
+                        <img src="The Grand maratha/Images/4l69ykibl52t3dolr4ho.png" alt="Gallery 3"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-img overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop"
-                            alt="Gallery 4" class="w-full aspect-square object-cover">
+                        <img src="The Grand maratha/Images/95b09wrkdw59dcwopg07.png" alt="Gallery 4"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-img overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2070&auto=format&fit=crop"
-                            alt="Gallery 5" class="w-full aspect-square object-cover">
+                        <img src="The Grand maratha/Images/0wvhosmeftztq33c397e.jpeg" alt="Gallery 5"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-img overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop"
-                            alt="Gallery 6" class="w-full aspect-square object-cover">
+                        <img src="The Grand maratha/Images/7qa2v33l9q59jt7s4bp5.jpg" alt="Gallery 6"
+                            class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="The Grand maratha/Images/WhatsApp Image 2026-01-28 at 6.59.42 PM.jpeg" alt="Gallery 7"
+                            class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="The Grand maratha/Images/WhatsApp Image 2026-01-28 at 7.03.11 PM.jpeg" alt="Gallery 8"
+                            class="w-full aspect-square object-cover">
+                    </div>
+                </div>
+
+                <div class="text-center mt-16 reveal">
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d]">Project Videos</h2>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Video 1 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9631.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 2 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9632.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 3 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9633.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 4 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9635.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 5 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9638.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 6 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9640.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 7 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9641.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 8 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9644.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 9 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9645.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 10 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9646.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 11 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9649.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 12 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9650.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 13 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/C9651.MP4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 14 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/WhatsApp Video 2026-01-28 at 6.59.42 PM (1).mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 15 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/WhatsApp Video 2026-01-28 at 6.59.42 PM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 16 -->
+                    <div class="reveal video-container bg-black rounded-3xl overflow-hidden shadow-2xl"
+                        onclick="toggleVideo(this)">
+                        <video class="w-full aspect-video object-cover" preload="metadata">
+                            <source src="The Grand maratha/Videos/WhatsApp Video 2026-01-28 at 6.59.43 PM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -706,7 +972,7 @@
                         </div>
                         <div>
                             <h3 class="font-semibold text-[#1a365d]">RERA Registered Project</h3>
-                            <p class="text-gray-500">MP/08/2024/00123 | Valid until 2029</p>
+                            <p class="text-gray-500">Reference No.: 601141443681 | T&CP Approved</p>
                         </div>
                     </div>
                     <a href="rera.html" class="btn-outline px-6 py-3 rounded-full font-semibold">View Details</a>
@@ -724,13 +990,13 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="contact.html"
                         class="bg-white text-[#c9a962] px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
-                        <span>Schedule Site Visit</span>
+                        <span>Contact Us</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                     </a>
-                    <a href="media-brochures.html"
+                    <a href="The Grand maratha/Text & PDF/Maratha.pdf" download
                         class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-white hover:text-[#c9a962] transition-all">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -754,7 +1020,7 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     <a href="project-british.html" class="reveal group">
                         <div class="relative overflow-hidden rounded-xl mb-4">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                            <img src="British Grand/Images/WhatsApp Image 2026-02-01 at 1.42.55 AM.jpeg"
                                 alt="British Grand"
                                 class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
@@ -766,32 +1032,32 @@
                         <p class="text-gray-500 text-sm">Luxury Villas</p>
                     </a>
 
-                    <a href="project-shyam.html" class="reveal group">
+                    <a href="project-singapore-one.html" class="reveal group">
                         <div class="relative overflow-hidden rounded-xl mb-4">
-                            <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=2025&auto=format&fit=crop"
-                                alt="Shyam Vihar"
+                            <img src="Singapore One Street/Images/WhatsApp Image 2026-01-31 at 8.47.14 PM.jpeg"
+                                alt="Singapore One Street"
                                 class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <span class="text-white font-semibold">View Project</span>
                             </div>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d]">Shyam Vihar</h3>
-                        <p class="text-gray-500 text-sm">Modern Living</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d]">Singapore One Street</h3>
+                        <p class="text-gray-500 text-sm">Premium Commercial</p>
                     </a>
 
-                    <a href="project-singapore.html" class="reveal group">
+                    <a href="project-saichhaya.html" class="reveal group">
                         <div class="relative overflow-hidden rounded-xl mb-4">
-                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2070&auto=format&fit=crop"
-                                alt="Singapore Radhakunj"
+                            <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.24 AM (1).jpeg"
+                                alt="Sai Chhaya Township"
                                 class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <span class="text-white font-semibold">View Project</span>
                             </div>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d]">Singapore Radhakunj</h3>
-                        <p class="text-gray-500 text-sm">Premium Plots</p>
+                        <h3 class="font-display text-xl font-bold text-[#1a365d]">Sai Chhaya Township</h3>
+                        <p class="text-gray-500 text-sm">Premium Township</p>
                     </a>
                 </div>
             </div>
@@ -860,7 +1126,7 @@
                         </li>
                         <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About
                                 Us</a></li>
-                        <li><a href="projects-residential.html"
+                        <li><a href="all-projects.html"
                                 class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
                         <li><a href="blog.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a>
                         </li>
@@ -886,7 +1152,12 @@
                                 class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore One Street</a>
                         </li>
                         <li><a href="project-ews.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a>
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a></li>
+                        <li><a href="project-saichhaya.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Sai Chhaya Township</a>
+                        </li>
+                        <li><a href="project-iris.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju Vihar</a>
                         </li>
                     </ul>
                 </div>
@@ -917,7 +1188,7 @@
                         <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 000-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <p class="text-gray-400 text-sm break-all">shreesiddhivinayakhomes271@gmail.com</p>
                     </div>
@@ -973,6 +1244,39 @@
                 navbar.classList.remove('py-2', 'bg-white/95', 'shadow-md');
             }
         });
+
+        function toggleVideo(container) {
+            const video = container.querySelector('video');
+            const overlay = container.querySelector('.video-overlay');
+
+            if (video.paused) {
+                // Pause all other videos
+                document.querySelectorAll('video').forEach(v => {
+                    if (v !== video) {
+                        v.pause();
+                        v.classList.remove('playing');
+                        const otherOverlay = v.parentElement.querySelector('.video-overlay');
+                        if (otherOverlay) {
+                            otherOverlay.style.opacity = '1';
+                            otherOverlay.style.pointerEvents = 'auto';
+                        }
+                        v.controls = false;
+                    }
+                });
+
+                video.play();
+                video.classList.add('playing');
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+                video.controls = true;
+            } else {
+                video.pause();
+                video.classList.remove('playing');
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'auto';
+                video.controls = false;
+            }
+        }
 
         gsap.registerPlugin(ScrollTrigger);
 

@@ -161,7 +161,7 @@
                         </button>
                         <div
                             class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 border border-gray-100">
-                            <a href="projects-residential.html"
+                            <a href="all-projects.html"
                                 class="block px-4 py-2 text-sm text-[#1a365d] font-bold hover:bg-gray-50 hover:text-[#c9a962]">All
                                 Projects</a>
                             <hr class="my-2 border-gray-50">
@@ -183,12 +183,12 @@
                             <a href="project-ews.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
                                 NX</a>
-                            <a href="project-saichhaya.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Sai Chhaya Township</a><a href="project-iris.html"
+                            <a href="project-saichhaya.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Sai
+                                Chhaya Township</a><a href="project-iris.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">IRIS
                                 Maa Sarju Vihar</a>
-                            <a href="project-radhakunj-2.html"
-                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Radha
-                                Kunj Phase II</a>
+
                         </div>
                     </div>
                     <a href="blog.html"
@@ -236,8 +236,7 @@
             <nav class="flex-1 px-6 py-8 flex flex-col gap-4">
                 <a href="index.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Home</a>
                 <a href="about.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">About</a>
-                <a href="projects-residential.html"
-                    class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
+                <a href="all-projects.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
                 <a href="blog.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Blog</a>
                 <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Contact Us</a>
             </nav>
@@ -298,6 +297,18 @@
                 <button
                     class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
                     data-filter="singapore">Singapore Radhakunj</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="one-street">Singapore One Street</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="ews">Singapore NX</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="saichhaya">Sai Chhaya</button>
+                <button
+                    class="filter-btn px-6 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    data-filter="iris">IRIS Maa Sarju Vihar</button>
             </div>
         </div>
     </section>
@@ -307,65 +318,95 @@
         <div class="w-full px-6 lg:px-12">
             <div class="max-w-7xl mx-auto">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- The Grand Maratha -->
                     <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="maratha"
                         onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop"
-                            alt="The Grand Maratha" class="w-full aspect-square object-cover">
-                    </div>
-                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="british"
-                        onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
-                            alt="British Grand" class="w-full aspect-square object-cover">
-                    </div>
-                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="shyam"
-                        onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=2025&auto=format&fit=crop"
-                            alt="Shyam Vihar" class="w-full aspect-square object-cover">
-                    </div>
-                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="singapore"
-                        onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
-                            alt="Singapore Radhakunj" class="w-full aspect-square object-cover">
+                        <img src="The grand maratha/Images/4l69ykibl52t3dolr4ho.png" alt="The Grand Maratha"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="maratha"
                         onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
-                            alt="The Grand Maratha" class="w-full aspect-square object-cover">
-                    </div>
-                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="british"
-                        onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop"
-                            alt="British Grand" class="w-full aspect-square object-cover">
-                    </div>
-                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="shyam"
-                        onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop"
-                            alt="Shyam Vihar" class="w-full aspect-square object-cover">
-                    </div>
-                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="singapore"
-                        onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2070&auto=format&fit=crop"
-                            alt="Singapore Radhakunj" class="w-full aspect-square object-cover">
+                        <img src="The grand maratha/Images/ws637fbw1c0yiecqiigq.png" alt="The Grand Maratha"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="maratha"
                         onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop"
-                            alt="The Grand Maratha" class="w-full aspect-square object-cover">
+                        <img src="The grand maratha/Images/47tjjltk2m3wyv98azir.png" alt="The Grand Maratha"
+                            class="w-full aspect-square object-cover">
+                    </div>
+
+                    <!-- British Grand -->
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="british"
+                        onclick="openLightbox(this)">
+                        <img src="British Grand/Images/WhatsApp Image 2026-02-01 at 1.42.55 AM.jpeg" alt="British Grand"
+                            class="w-full aspect-square object-cover">
                     </div>
                     <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="british"
                         onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2070&auto=format&fit=crop"
-                            alt="British Grand" class="w-full aspect-square object-cover">
+                        <img src="British Grand/Images/WhatsApp Image 2026-02-01 at 1.43.14 AM.jpeg" alt="British Grand"
+                            class="w-full aspect-square object-cover">
                     </div>
+
+                    <!-- Shyam Vihar -->
                     <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="shyam"
                         onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop"
-                            alt="Shyam Vihar" class="w-full aspect-square object-cover">
+                        <img src="Shyam Vihar/Images/images 2.jpg" alt="Shyam Vihar"
+                            class="w-full aspect-square object-cover">
                     </div>
+
+                    <!-- Singapore Radhakunj -->
                     <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="singapore"
                         onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
-                            alt="Singapore Radhakunj" class="w-full aspect-square object-cover">
+                        <img src="Radha Kunj/Images/Colony image.jpg" alt="Singapore Radhakunj"
+                            class="w-full aspect-square object-cover">
+                    </div>
+
+                    <!-- Singapore One Street -->
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="one-street"
+                        onclick="openLightbox(this)">
+                        <img src="Singapore One Street/Images/WhatsApp Image 2026-01-31 at 8.47.14 PM.jpeg"
+                            alt="Singapore One Street" class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="one-street"
+                        onclick="openLightbox(this)">
+                        <img src="Singapore One Street/Images/WhatsApp Image 2026-01-31 at 8.46.56 PM.jpeg"
+                            alt="Singapore One Street" class="w-full aspect-square object-cover">
+                    </div>
+
+                    <!-- Singapore NX -->
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="ews"
+                        onclick="openLightbox(this)">
+                        <img src="EWS 1RK FLATS/Images/Banner Image.png" alt="Singapore NX"
+                            class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="ews"
+                        onclick="openLightbox(this)">
+                        <img src="EWS 1RK FLATS/Images/WhatsApp Image 2026-02-01 at 1.42.56 AM.jpeg" alt="Singapore NX"
+                            class="w-full aspect-square object-cover">
+                    </div>
+
+                    <!-- Sai Chhaya -->
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="saichhaya"
+                        onclick="openLightbox(this)">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.25 AM.jpeg" alt="Sai Chhaya"
+                            class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="saichhaya"
+                        onclick="openLightbox(this)">
+                        <img src="Sai Chhaya /Images/WhatsApp Image 2026-02-01 at 1.43.27 AM.jpeg" alt="Sai Chhaya"
+                            class="w-full aspect-square object-cover">
+                    </div>
+
+                    <!-- IRIS Maa Sarju Vihar -->
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="iris"
+                        onclick="openLightbox(this)">
+                        <img src="IRIS-Maa Sarju Vihar/Images/Main image.jpg" alt="IRIS Maa Sarju Vihar"
+                            class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-item rounded-xl overflow-hidden" data-project="iris"
+                        onclick="openLightbox(this)">
+                        <img src="IRIS-Maa Sarju Vihar/Images/Colony map.jpeg" alt="IRIS Maa Sarju Vihar"
+                            class="w-full aspect-square object-cover">
                     </div>
                 </div>
             </div>
@@ -384,7 +425,7 @@
 
     <!-- Footer -->
     <footer class="bg-[#0a1118] text-white pt-16 pb-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <!-- Column 1: Brand & Social -->
                 <div class="space-y-6">
@@ -423,58 +464,67 @@
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </a>
+                        <a href="https://share.google/KrFsOeZUGJncUe1wz" target="_blank"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div>
-                    <h4 class="font-display text-white text-lg font-bold mb-8 italic">Quick Links</h4>
-                    <ul class="space-y-4">
-                        <li><a href="index.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Home</a>
+                    <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Home</a>
                         </li>
-                        <li><a href="about.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">About</a>
+                        <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About
+                                Us</a></li>
+                        <li><a href="all-projects.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a>
                         </li>
-                        <li><a href="projects-residential.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Projects</a>
-                        </li>
-                        <li><a href="blog.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Blog</a>
-                        </li>
-                        <li><a href="contact.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Contact</a>
-                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact
+                                Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Projects -->
+                <!-- Column 3: Our Projects -->
                 <div>
-                    <h4 class="font-display text-white text-lg font-bold mb-8 italic">Featured Projects</h4>
-                    <ul class="space-y-4">
+                    <h4 class="font-display text-lg font-bold mb-6">Our Projects</h4>
+                    <ul class="space-y-4 text-sm">
                         <li><a href="project-maratha.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">The Grand
-                                Maratha</a></li>
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a></li>
                         <li><a href="project-british.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">British
-                                Grand</a></li>
-                        <li><a href="project-ews.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Singapore
-                                NX</a></li>
-
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
                         <li><a href="project-shyam.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Shyam
-                                Vihar</a></li>
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
                         <li><a href="project-singapore.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-all hover:pl-2 text-sm">Singapore
-                                Radhakunj</a></li>
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a>
+                        </li>
+                        <li><a href="project-singapore-one.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore One Street</a>
+                        </li>
+                        <li><a href="project-ews.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a></li>
+                        <li><a href="project-saichhaya.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Sai Chhaya Township</a>
+                        </li>
+                        <li><a href="project-iris.html"
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju Vihar</a>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Column 4: Contact Info -->
+                <!-- Column 4: Contact Us -->
                 <div class="space-y-6">
-                    <h4 class="font-display text-white text-lg font-bold mb-8 italic">Get In Touch</h4>
-                    <div class="flex items-start gap-4">
+                    <h4 class="font-display text-lg font-bold mb-6">Contact Us</h4>
+                    <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -485,7 +535,7 @@
                         <p class="text-gray-400 text-sm">307, Singapore Business Park, LIG Square, Indore, Madhya
                             Pradesh, 452010</p>
                     </div>
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -493,11 +543,11 @@
                         </svg>
                         <p class="text-gray-400 text-sm">+91 80851 26788, 88238 72527</p>
                     </div>
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 000-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <p class="text-gray-400 text-sm break-all">shreesiddhivinayakhomes271@gmail.com</p>
                     </div>
