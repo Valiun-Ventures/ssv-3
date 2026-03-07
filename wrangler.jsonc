@@ -1,8 +1,13 @@
 {
-    "name": "ssvh-website",
+    "name": "ssv-3",
     "compatibility_date": "2026-02-20",
     "assets": {
-        "directory": "."
+        "directory": ".",
+        "exclude": [
+            ".git",
+            "node_modules",
+            ".DS_Store"
+        ]
     },
     "observability": {
         "enabled": true
