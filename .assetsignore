@@ -1,0 +1,21 @@
+.git/
+node_modules/
+.DS_Store
+.wrangler/
+*.mp4
+*.MOV
+/The grand maratha/Videos/
+/British Grand/Videos/
+/EWS 1RK FLATS/Videos/
+/IRIS-Maa Sarju Vihar/Videos/
+/Radha Kunj/Videos/
+/Sai Chhaya /Videos/
+/Shyam Vihar/Videos/
+/Singapore One Street/Videos/
+.wranglerignore
+.assetsignore
+wrangler.jsonc
+package-lock.json
+package.json
+server.js
+README.md
