@@ -121,7 +121,7 @@
 
         .hero-bg {
             background: linear-gradient(135deg, rgba(26, 54, 93, 0.7) 0%, rgba(45, 90, 74, 0.6) 100%),
-                url('British Grand/Images/WhatsApp Image 2026-02-01 at 1.42.55 AM.jpeg');
+                url('https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Images/WhatsApp%20Image%202026-02-01%20at%201.42.55%20AM.jpeg?updatedAt=1773016650469');
             background-size: cover;
             background-position: center;
         }
@@ -152,6 +152,31 @@
         ::-webkit-scrollbar-thumb {
             background: #c9a962;
             border-radius: 4px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+            color: white;
         }
     </style>
 </head>
@@ -225,7 +250,7 @@
                 <!-- CTA Button -->
                 <div class="hidden lg:block">
                     <a href="contact.html"
-                        class="btn-gold px-5 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                        class="btn-gold px-5 py-2.5 rounded-full text-sm font-medium hidden lg:inline-flex items-center gap-2">
                         <span>Contact Us</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -259,28 +284,36 @@
                 </button>
             </div>
 
-            <nav class="flex-1 px-6 py-8 flex flex-col gap-4">
-                <a href="index.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Home</a>
-                <a href="about.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">About</a>
-                <a href="all-projects.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
-                <a href="blog.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Blog</a>
-                <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Contact Us</a>
+            <nav class="flex-1 px-6 py-4 flex flex-col gap-6">
+                <a href="index.html"
+                    class="text-2xl font-display font-bold text-gray-400 hover:text-[#1a365d] transition-colors">Home</a>
+                <a href="about.html"
+                    class="text-2xl font-display font-bold text-gray-400 hover:text-[#1a365d] transition-colors">About</a>
+                <a href="all-projects.html"
+                    class="text-2xl font-display font-bold text-[#1a365d] border-l-4 border-[#c9a962] pl-4">Projects</a>
+                <a href="blog.html"
+                    class="text-2xl font-display font-bold text-gray-400 hover:text-[#1a365d] transition-colors">Blog</a>
+                <div class="pt-6">
+                    <a href="contact.html"
+                        class="btn-gold block w-full py-4 rounded-full text-center font-bold text-lg shadow-lg">Contact
+                        Us</a>
+                </div>
             </nav>
 
             <div class="px-6 py-8 border-t bg-gray-50">
-                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Connect With Us</p>
-                <div class="flex gap-4">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Connect With Us</p>
+                <div class="flex gap-6">
                     <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
-                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1a365d] shadow-sm">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#1a365d] shadow-sm border border-gray-100">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                         </svg>
                     </a>
                     <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
                         target="_blank"
-                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1a365d] shadow-sm">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#1a365d] shadow-sm border border-gray-100">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
@@ -299,8 +332,10 @@
             <div class="max-w-7xl mx-auto text-center">
                 <div class="max-w-3xl mx-auto">
                     <p class="text-[#c9a962] font-medium tracking-widest uppercase mb-4 reveal">Completed Project</p>
-                    <h1 class="font-display text-5xl lg:text-7xl font-bold text-white mb-6 reveal">Singapore British
-                        Grand</h1>
+                    <h1
+                        class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 reveal line-tight">
+                        British Grand
+                    </h1>
                     <p class="text-white/90 text-lg mb-8 reveal">A premium plotted residential development by Sarthak
                         Real Build Pvt. Ltd. Behind Singapore Township, Talawali Chanda, A.B. Road, Indore.</p>
                     <div class="flex flex-wrap justify-center gap-4 reveal">
@@ -312,7 +347,8 @@
                                     d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
-                        <a href="British Grand/Text & PDF/British Grand.pdf" download
+                        <a href="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Text%20&%20PDF/British%20Grand..pdf"
+                            download
                             class="px-8 py-4 rounded-full font-semibold border-2 border-white text-white hover:bg-white hover:text-[#1a365d] transition-all inline-flex items-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -478,7 +514,9 @@
 
                 <div class="reveal relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black group">
                     <video class="w-full h-full object-cover" autoplay muted loop playsinline controls>
-                        <source src="British Grand/Videos/WhatsApp Video 2026-01-28 at 7.00.08 PM.mp4" type="video/mp4">
+                        <source
+                            src="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Videos/WhatsApp%20Video%202026-01-28%20at%207.00.08%20PM.mp4?updatedAt=1773016657030"
+                            type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -636,7 +674,7 @@
                     </div>
                     <div class="reveal order-1 lg:order-2">
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl skew-y-1">
-                            <img src="British Grand/Images/WhatsApp Image 2026-02-01 at 1.43.14 AM.jpeg"
+                            <img src="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Images/WhatsApp%20Image%202026-02-01%20at%201.43.14%20AM.jpeg?updatedAt=1773016650775"
                                 alt="Featured 1 BHK House" class="w-full">
 
                         </div>
@@ -706,7 +744,7 @@
 
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="reveal gallery-img overflow-hidden rounded-xl group relative">
-                        <img src="British Grand/Images/WhatsApp Image 2026-02-01 at 1.42.55 AM.jpeg"
+                        <img src="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Images/WhatsApp%20Image%202026-02-01%20at%201.42.55%20AM.jpeg?updatedAt=1773016650469"
                             alt="1 BHK House Exterior" class="w-full aspect-square object-cover">
                         <div
                             class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -714,7 +752,7 @@
                         </div>
                     </div>
                     <div class="reveal gallery-img overflow-hidden rounded-xl group relative">
-                        <img src="British Grand/Images/WhatsApp Image 2026-02-01 at 1.43.14 AM.jpeg"
+                        <img src="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Images/WhatsApp%20Image%202026-02-01%20at%201.43.14%20AM.jpeg?updatedAt=1773016650775"
                             alt="Luxury Interior View" class="w-full aspect-square object-cover">
                         <div
                             class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -748,299 +786,314 @@
     <!-- RERA Info -->
     <section class="py-16 bg-gray-50">
         <div class="w-full px-6 lg:px-12">
-            <div class="max-w-7xl mx-auto">
-                <div
-                    class="bg-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-[#1a365d]/10 rounded-full flex items-center justify-center">
-                            <span class="font-display text-xl font-bold text-[#1a365d]">RERA</span>
+
+            <!-- CTA Section -->
+            <section class="py-16 bg-[#c9a962]">
+                <div class="w-full px-6 lg:px-12">
+                    <div class="max-w-4xl mx-auto text-center reveal">
+                        <h2 class="font-display text-4xl font-bold text-white mb-4">Interested in Resale?</h2>
+                        <p class="text-white/80 mb-8">Looking for a resale villa at British Grand? Contact us for
+                            available
+                            options.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="contact.html"
+                                class="bg-white text-[#c9a962] px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                                <span>Enquire Now</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/British%20Grand/Text%20&%20PDF/British%20Grand..pdf"
+                                download
+                                class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-white hover:text-[#c9a962] transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>Download Brochure</span>
+                            </a>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Other Projects -->
+            <section class="py-16">
+                <div class="w-full px-6 lg:px-12">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="text-center mb-12 reveal">
+                            <h2 class="font-display text-3xl font-bold text-[#1a365d]">Explore Other Projects</h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <a href="project-maratha.html" class="reveal group">
+                                <div class="relative overflow-hidden rounded-xl mb-4">
+                                    <img src="The grand maratha/Images/4l69ykibl52t3dolr4ho.png" alt="The Grand Maratha"
+                                        class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                        <span class="text-white font-semibold">View Project</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-[#1a365d]">The Grand Maratha</h3>
+                                <p class="text-gray-500 text-sm">Premium Plots</p>
+                            </a>
+
+                            <a href="project-ews.html" class="reveal group">
+                                <div class="relative overflow-hidden rounded-xl mb-4">
+                                    <img src="EWS 1RK FLATS/Images/WhatsApp Image 2026-02-01 at 1.42.56 AM.jpeg"
+                                        alt="Singapore NX"
+                                        class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                        <span class="text-white font-semibold">View Project</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-[#1a365d]">Singapore NX</h3>
+                                <p class="text-gray-500 text-sm">Residential Flats</p>
+                            </a>
+
+                            <a href="project-iris.html" class="reveal group">
+                                <div class="relative overflow-hidden rounded-xl mb-4">
+                                    <img src="https://ik.imagekit.io/q0gorn2pwv/SSV%20Project%20Data/IRIS-Maa%20Sarju%20Vihar%20/Images/Main%20image.jpg?updatedAt=1773017940144"
+                                        alt="IRIS Maa Sarju Vihar"
+                                        class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                        <span class="text-white font-semibold">View Project</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-[#1a365d]">IRIS Maa Sarju Vihar</h3>
+                                <p class="text-gray-500 text-sm">Premium Plots</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-[#0a1118] text-white pt-16 pb-8 border-t border-white/5">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                        <!-- Column 1: Brand & Social -->
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-3">
+                                <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
+                                    alt="SSVH Logo" class="h-12 w-auto object-contain">
+                                <span class="font-display text-xl font-bold tracking-tight">SSV Homes</span>
+                            </div>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                                Your trusted partner in finding the perfect property. We deliver excellence in real
+                                estate with
+                                integrity and innovation.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
+                                    class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                    </svg>
+                                </a>
+                                <a href="tel:+918085126788"
+                                    class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
+                                    target="_blank"
+                                    class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </a>
+                                <a href="https://share.google/KrFsOeZUGJncUe1wz" target="_blank"
+                                    class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Quick Links -->
                         <div>
-                            <h3 class="font-semibold text-[#1a365d]">RERA Registered Project</h3>
-                            <p class="text-gray-500">MP/08/2021/00456 | Valid until 2026</p>
+                            <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
+                            <ul class="space-y-4 text-sm">
+                                <li><a href="index.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Home</a>
+                                </li>
+                                <li><a href="about.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">About
+                                        Us</a></li>
+                                <li><a href="all-projects.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
+                                <li><a href="blog.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a>
+                                </li>
+                                <li><a href="contact.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact
+                                        Us</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <a href="rera.html" class="btn-outline px-6 py-3 rounded-full font-semibold">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-[#c9a962]">
-        <div class="w-full px-6 lg:px-12">
-            <div class="max-w-4xl mx-auto text-center reveal">
-                <h2 class="font-display text-4xl font-bold text-white mb-4">Interested in Resale?</h2>
-                <p class="text-white/80 mb-8">Looking for a resale villa at British Grand? Contact us for available
-                    options.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact.html"
-                        class="bg-white text-[#c9a962] px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
-                        <span>Contact for Resale</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                    <a href="British Grand/Text & PDF/British Grand.pdf" download
-                        class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-white hover:text-[#c9a962] transition-all">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span>Download Brochure</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Column 3: Our Projects -->
+                        <div>
+                            <h4 class="font-display text-lg font-bold mb-6">Our Projects</h4>
+                            <ul class="space-y-4 text-sm">
+                                <li><a href="project-maratha.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand
+                                        Maratha</a></li>
+                                <li><a href="project-british.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a>
+                                </li>
+                                <li><a href="project-shyam.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a>
+                                </li>
+                                <li><a href="project-singapore.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore
+                                        Radhakunj</a>
+                                </li>
+                                <li><a href="project-singapore-one.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore One
+                                        Street</a>
+                                </li>
+                                <li><a href="project-ews.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a>
+                                </li>
+                                <li><a href="project-saichhaya.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">Sai Chhaya
+                                        Township</a>
+                                </li>
+                                <li><a href="project-iris.html"
+                                        class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju
+                                        Vihar</a>
+                                </li>
+                            </ul>
+                        </div>
 
-    <!-- Other Projects -->
-    <section class="py-16">
-        <div class="w-full px-6 lg:px-12">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-12 reveal">
-                    <h2 class="font-display text-3xl font-bold text-[#1a365d]">Explore Other Projects</h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <a href="project-maratha.html" class="reveal group">
-                        <div class="relative overflow-hidden rounded-xl mb-4">
-                            <img src="The grand maratha/Images/4l69ykibl52t3dolr4ho.png" alt="The Grand Maratha"
-                                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="text-white font-semibold">View Project</span>
+                        <!-- Column 4: Contact Us -->
+                        <div class="space-y-6">
+                            <h4 class="font-display text-lg font-bold mb-6">Contact Us</h4>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <p class="text-gray-400 text-sm">307, Singapore Business Park, LIG Square, Indore,
+                                    Madhya
+                                    Pradesh, 452010</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <p class="text-gray-400 text-sm">+91 80851 26788, 88238 72527</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 000-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <p class="text-gray-400 text-sm break-all">shreesiddhivinayakhomes271@gmail.com</p>
+                            </div>
+                            <div class="pt-4 border-t border-white/5">
+                                <h5 class="text-white text-sm font-bold mb-2">Office Hours</h5>
+                                <p class="text-gray-400 text-sm">Monday - Saturday: 11:00 AM - 7:30 PM</p>
+                                <p class="text-gray-400 text-sm">Sunday: Closed (By Appointment)</p>
                             </div>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d]">The Grand Maratha</h3>
-                        <p class="text-gray-500 text-sm">Premium Plots</p>
-                    </a>
+                    </div>
 
-                    <a href="project-ews.html" class="reveal group">
-                        <div class="relative overflow-hidden rounded-xl mb-4">
-                            <img src="EWS 1RK FLATS/Images/WhatsApp Image 2026-02-01 at 1.42.56 AM.jpeg"
-                                alt="Singapore NX"
-                                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="text-white font-semibold">View Project</span>
-                            </div>
+                    <!-- Bottom Strip -->
+                    <div
+                        class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 pb-8">
+                        <p class="text-gray-500 text-xs">© 2026 SSV Homes. All rights reserved.</p>
+                        <div class="flex flex-wrap justify-center gap-6 text-xs">
+                            <a href="privacy.html" class="text-gray-500 hover:text-white transition-colors">Privacy
+                                Policy</a>
+                            <a href="terms.html" class="text-gray-500 hover:text-white transition-colors">Terms &
+                                Conditions</a>
+                            <a href="disclaimer.html"
+                                class="text-gray-500 hover:text-white transition-colors">Disclaimer</a>
+                            <a href="rera.html" class="text-gray-500 hover:text-white transition-colors">RERA
+                                Details</a>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d]">Singapore NX</h3>
-                        <p class="text-gray-500 text-sm">Residential Flats</p>
-                    </a>
-
-                    <a href="project-iris.html" class="reveal group">
-                        <div class="relative overflow-hidden rounded-xl mb-4">
-                            <img src="IRIS-Maa Sarju Vihar/Images/Main image.jpg" alt="IRIS Maa Sarju Vihar"
-                                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="text-white font-semibold">View Project</span>
-                            </div>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-[#1a365d]">IRIS Maa Sarju Vihar</h3>
-                        <p class="text-gray-500 text-sm">Premium Plots</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0a1118] text-white pt-16 pb-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Column 1: Brand & Social -->
-                <div class="space-y-6">
-                    <div class="flex items-center gap-3">
-                        <img src="https://ik.imagekit.io/q0gorn2pwv/IMG_20260220_115017.png?updatedAt=1771568605685"
-                            alt="SSVH Logo" class="h-12 w-auto object-contain">
-                        <span class="font-display text-xl font-bold tracking-tight">SSV Homes</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
-                        Your trusted partner in finding the perfect property. We deliver excellence in real estate with
-                        integrity and innovation.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <a href="https://www.facebook.com/share/1CW4g5ky3f/" target="_blank"
-                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <a href="tel:+918085126788"
-                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/shreesiddhivinayakhomes?igsh=MXNqOG8xemJhY3RoNA=="
-                            target="_blank"
-                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <a href="https://share.google/KrFsOeZUGJncUe1wz" target="_blank"
-                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c9a962] transition-all group">
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </a>
                     </div>
                 </div>
+            </footer>
 
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-4 text-sm">
-                        <li><a href="index.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Home</a>
-                        </li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About
-                                Us</a></li>
-                        <li><a href="all-projects.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
-                        <li><a href="blog.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Blog</a>
-                        </li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact
-                                Us</a></li>
-                    </ul>
-                </div>
+            <script>
+                // Mobile Menu Toggle
+                const mobileToggle = document.getElementById('mobileToggle');
+                const closeMobile = document.getElementById('closeMobile');
+                const mobileMenu = document.getElementById('mobileMenu');
 
-                <!-- Column 3: Our Projects -->
-                <div>
-                    <h4 class="font-display text-lg font-bold mb-6">Our Projects</h4>
-                    <ul class="space-y-4 text-sm">
-                        <li><a href="project-maratha.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a></li>
-                        <li><a href="project-british.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
-                        <li><a href="project-shyam.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
-                        <li><a href="project-singapore.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a>
-                        </li>
-                        <li><a href="project-singapore-one.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore One Street</a>
-                        </li>
-                        <li><a href="project-ews.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a></li>
-                        <li><a href="project-saichhaya.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Sai Chhaya Township</a>
-                        </li>
-                        <li><a href="project-iris.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju Vihar</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Contact Us -->
-                <div class="space-y-6">
-                    <h4 class="font-display text-lg font-bold mb-6">Contact Us</h4>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <p class="text-gray-400 text-sm">307, Singapore Business Park, LIG Square, Indore, Madhya
-                            Pradesh, 452010</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        <p class="text-gray-400 text-sm">+91 80851 26788, 88238 72527</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-[#c9a962] mt-1 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 000-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <p class="text-gray-400 text-sm break-all">shreesiddhivinayakhomes271@gmail.com</p>
-                    </div>
-                    <div class="pt-4 border-t border-white/5">
-                        <h5 class="text-white text-sm font-bold mb-2">Office Hours</h5>
-                        <p class="text-gray-400 text-sm">Monday - Saturday: 11:00 AM - 7:30 PM</p>
-                        <p class="text-gray-400 text-sm">Sunday: Closed (By Appointment)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Strip -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 pb-8">
-                <p class="text-gray-500 text-xs">© 2026 SSV Homes. All rights reserved.</p>
-                <div class="flex flex-wrap justify-center gap-6 text-xs">
-                    <a href="privacy.html" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="terms.html" class="text-gray-500 hover:text-white transition-colors">Terms & Conditions</a>
-                    <a href="disclaimer.html" class="text-gray-500 hover:text-white transition-colors">Disclaimer</a>
-                    <a href="rera.html" class="text-gray-500 hover:text-white transition-colors">RERA Details</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const closeMobile = document.getElementById('closeMobile');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        if (mobileToggle && mobileMenu) {
-            mobileToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        if (closeMobile && mobileMenu) {
-            closeMobile.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('py-2', 'bg-white/95', 'shadow-md');
-                navbar.classList.remove('py-4', 'bg-white/90');
-            } else {
-                navbar.classList.add('py-4', 'bg-white/90');
-                navbar.classList.remove('py-2', 'bg-white/95', 'shadow-md');
-            }
-        });
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            gsap.fromTo(el,
-                { y: 30, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8,
-                    scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+                if (mobileToggle && mobileMenu) {
+                    mobileToggle.addEventListener('click', () => {
+                        mobileMenu.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
                 }
-            );
-        });
-    </script>
+
+                if (closeMobile && mobileMenu) {
+                    closeMobile.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+
+                // Navbar Scroll Effect
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('py-2', 'bg-white/95', 'shadow-md');
+                        navbar.classList.remove('py-4', 'bg-white/90');
+                    } else {
+                        navbar.classList.add('py-4', 'bg-white/90');
+                        navbar.classList.remove('py-2', 'bg-white/95', 'shadow-md');
+                    }
+                });
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                document.querySelectorAll('.reveal').forEach(el => {
+                    gsap.fromTo(el,
+                        { y: 30, opacity: 0 },
+                        {
+                            y: 0, opacity: 1, duration: 0.8,
+                            scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+                        }
+                    );
+                });
+            </script>
+
+            <!-- WhatsApp Floating Button -->
+            <a href="https://wa.me/918085126788" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 448 512">
+                    <path
+                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.7 68.9 27.1 106.1 27.1h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65-157.1zM223.9 445.5c-33.1 0-65.7-8.9-94.1-25.7l-6.7-4-69.8 18.3L71.5 366l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54 81.2 54 130.5 0 101.7-82.8 184.6-184.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.5-27.4-16.4-14.6-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.7 9.1 31.7 11.7 13.4 4.3 25.5 3.7 35.1 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                </svg>
+            </a>
 </body>
 
 </html>

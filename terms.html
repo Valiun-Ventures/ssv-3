@@ -97,6 +97,31 @@
         .page-header {
             background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 74, 0.8) 100%);
         }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -149,10 +174,12 @@
                             <a href="project-ews.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Singapore
                                 NX</a>
-                            <a href="project-saichhaya.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Sai Chhaya Township</a><a href="project-iris.html"
+                            <a href="project-saichhaya.html"
+                                class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Sai
+                                Chhaya Township</a><a href="project-iris.html"
                                 class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">IRIS
                                 Maa Sarju Vihar</a>
-                            
+
                         </div>
                     </div>
                     <a href="blog.html"
@@ -197,8 +224,7 @@
             <nav class="flex-1 px-6 py-8 flex flex-col gap-4">
                 <a href="index.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Home</a>
                 <a href="about.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">About</a>
-                <a href="all-projects.html"
-                    class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
+                <a href="all-projects.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Projects</a>
                 <a href="blog.html" class="text-2xl font-bold text-gray-400 hover:text-[#1a365d]">Blog</a>
                 <a href="contact.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Contact Us</a>
             </nav>
@@ -296,7 +322,7 @@
         </div>
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-[#0a1118] text-white pt-16 pb-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -386,10 +412,12 @@
                         <li><a href="project-ews.html"
                                 class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore NX</a></li>
                         <li><a href="project-saichhaya.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Sai Chhaya Township</a></li>
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">Sai Chhaya Township</a>
+                        </li>
                         <li><a href="project-iris.html"
-                                class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju Vihar</a></li>
-</ul>
+                                class="text-gray-400 hover:text-[#c9a962] transition-colors">IRIS Maa Sarju Vihar</a>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Column 4: Contact Us -->
@@ -475,6 +503,13 @@
             }
         });
     </script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918085126788" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 448 512">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.7 68.9 27.1 106.1 27.1h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65-157.1zM223.9 445.5c-33.1 0-65.7-8.9-94.1-25.7l-6.7-4-69.8 18.3L71.5 366l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54 81.2 54 130.5 0 101.7-82.8 184.6-184.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.5-27.4-16.4-14.6-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.7 9.1 31.7 11.7 13.4 4.3 25.5 3.7 35.1 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
 </body>
 
 </html>
